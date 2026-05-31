@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSOQ PERU EXPEDITION - Vive una experiencia única en Perú</title>
+    <!-- Fuentes modernas: Poppins e Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ajustes específicos para el rediseño exacto del Index */
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        .btn-outline:hover {
+            background: white;
+            color: var(--color-text-dark);
+        }
+
+        /* Sección Viajes de Autor */
+        .viajes-autor {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--color-text-dark);
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+        .viajes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            background: #f0f4f8;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .viajes-text {
+            padding: 40px;
+        }
+        .viajes-text p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        .viajes-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Sección Especialistas (4 Cards) */
+        .especialistas {
+            padding: 20px 5% 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .especialistas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .card-esp {
+            position: relative;
+            height: 350px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .card-esp:hover {
+            transform: translateY(-10px);
+        }
+        .card-esp img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .card-esp:hover img {
+            transform: scale(1.05);
+        }
+        .card-esp-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .card-esp-price {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #ccc;
+        }
+        .card-esp-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        /* Sección Porqué Reservar (ROJO) */
+        .porque-reservar {
+            background-color: var(--color-primary); /* Rojo */
+            color: white;
+            padding: 80px 5%;
+            text-align: center;
+        }
+        .porque-title {
+            font-size: 2rem;
+            margin-bottom: 50px;
+            font-weight: 600;
+        }
+        .porque-title span {
+            border-bottom: 3px solid white;
+            padding-bottom: 5px;
+        }
+        .porque-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .porque-item .icon-circle {
+            width: 60px;
+            height: 60px;
+            border: 2px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            font-size: 1.5rem;
+        }
+        .porque-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .porque-item p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* Sección Lo más importante (Blog) */
+        .blog-section {
+            background: #f0f7fa;
+            padding: 80px 5%;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .blog-content {
+            padding: 20px;
+            text-align: left;
+        }
+        .blog-content h4 {
+            color: var(--color-primary);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .blog-content p {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .btn-link {
+            background: var(--color-primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* Sección Categorías (Masonry) */
+        .categorias-section {
+            padding: 80px 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-auto-rows: 200px;
+            gap: 20px;
+        }
+        .cat-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .cat-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .cat-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+        .cat-item:hover .cat-overlay {
+            background: rgba(0,0,0,0.2);
+        }
+        .cat-overlay h3 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        /* Masonry specific sizes */
+        .cat-1 { grid-column: span 1; grid-row: span 2; } /* Izquierda larga */
+        .cat-2 { grid-column: span 1; grid-row: span 1; } /* Derecha arriba */
+        .cat-3 { grid-column: span 1; grid-row: span 1; } /* Derecha abajo */
+        
+        .cat-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .viajes-grid, .porque-grid, .blog-grid, .especialistas-grid, .masonry-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-title { font-size: 3rem; }
+            .cat-1, .cat-2, .cat-3 { grid-column: span 1; grid-row: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar (Mismo diseño de la captura) -->
+    <header class="navbar" id="navbar" style="background: rgba(0,0,0,0.2);">
+        <div class="nav-container">
+            <div class="logo-box" style="background: white; padding: 10px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <a href="index.html" class="logo"><img src="logo.png" alt="Musoq Peru Expedition" style="height: 60px;"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" style="color: var(--color-primary);">Inicio</a>
+                <div class="nav-dropdown">
+                    <a href="nosotros.html" class="dropdown-trigger">Nosotros</a>
+                    <div class="dropdown-menu-list">
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="metodos-de-pago.html">Métodos de pago</a>
+                        <a href="politica-de-privacidad.html">Política de privacidad</a>
+                        <a href="terminos-y-condiciones.html">Términos y condiciones</a>
+                        <a href="responsabilidad-social.html">Responsabilidad Social</a>
+                    </div>
+                </div>
+                <a href="tours.html">Tours en Cusco</a>
+                <a href="destinos.html">Categorías</a>
+                <a href="#blog">Blog</a>
+            </nav>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="btn btn-primary">Contáctanos 📱</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-link">Inicio</a>
+            <a href="nosotros.html" class="mobile-link">Nosotros</a>
+            <div class="mobile-sublinks" style="display: flex; flex-direction: column; gap: 8px; padding-left: 20px; margin-bottom: 10px;">
+                <a href="metodos-de-pago.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Métodos de pago</a>
+                <a href="politica-de-privacidad.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Política de privacidad</a>
+                <a href="terminos-y-condiciones.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Términos y condiciones</a>
+                <a href="responsabilidad-social.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Responsabilidad Social</a>
+            </div>
+            <a href="tours.html" class="mobile-link">Tours en Cusco</a>
+            <a href="destinos.html" class="mobile-link">Categorías</a>
+            <a href="contacto.html" class="mobile-link">Contacto</a>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="btn btn-primary mobile-link" style="margin-top: 20px;">Asesoría Gratis 📱</a>
+        </div>
+    </div>
+
+    <!-- Hero Section (Taller, Video y Slideshow con Música Cultural) -->
+    <section class="hero">
+        <!-- Hero Slideshow Background -->
+        <div class="hero-slideshow">
+            <!-- Slide 1: Video Principal de Cusco -->
+            <div class="hero-slide active">
+                <video autoplay muted loop playsinline>
+                    <source src="hero_video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <!-- Slide 2: Machu Picchu (Maravilla del Mundo) -->
+            <div class="hero-slide" style="background-image: url('images/machu_picchu.png');"></div>
+            <!-- Slide 3: Gastronomía Peruana (Ceviche) -->
+            <div class="hero-slide" style="background-image: url('images/ceviche.jpg');"></div>
+            <!-- Slide 4: Las Playas de Perú (Máncora) -->
+            <div class="hero-slide" style="background-image: url('images/playa.jpg');"></div>
+            <!-- Slide 5: Choquequirao (La Hermana de Machu Picchu) -->
+            <div class="hero-slide" style="background-image: url('images/choquequirao.jpg');"></div>
+            <!-- Slide 6: Salkantay (Nevado y Trekking Majestuoso) -->
+            <div class="hero-slide" style="background-image: url('images/salkantay.jpg');"></div>
+            <!-- Slide 7: Gastronomía Peruana (Lomo Saltado) -->
+            <div class="hero-slide" style="background-image: url('images/lomo_saltado.jpg');"></div>
+            <!-- Slide 8: Deporte de Aventura (Zipline en Cusco) -->
+            <div class="hero-slide" style="background-image: url('images/zipline.jpg');"></div>
+            <!-- Slide 9: Deporte de Aventura (Canotaje en Urubamba) -->
+            <div class="hero-slide" style="background-image: url('images/canotaje.jpg');"></div>
+            <!-- Slide 10: Ciclismo de Abra Málaga -->
+            <div class="hero-slide" style="background-image: url('images/ciclismo.jpg');"></div>
+            <!-- Slide 11: Catarata de 7 Tinajas -->
+            <div class="hero-slide" style="background-image: url('images/catarata.jpg');"></div>
+            <!-- Slide 12: Camino Inca Histórico -->
+            <div class="hero-slide" style="background-image: url('images/camino_inca.jpg');"></div>
+            <!-- Slide 13: Complejo Arqueológico de Sacsayhuaman -->
+            <div class="hero-slide" style="background-image: url('images/sacsayhuaman.jpg');"></div>
+            <!-- Slide 14: Fortaleza de Ollantaytambo -->
+            <div class="hero-slide" style="background-image: url('images/ollantaytambo.jpg');"></div>
+            <!-- Slide 15: Alpacas Andinas -->
+            <div class="hero-slide" style="background-image: url('images/alpaca.jpg');"></div>
+            <!-- Slide 16: Cusco Imperial -->
+            <div class="hero-slide" style="background-image: url('images/cusco.jpg');"></div>
+            <!-- Slide 17: Marca Perú -->
+            <div class="hero-slide" style="background-image: url('images/marca_peru.jpg');"></div>
+        </div>
+
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Vive una experiencia<br>única en Perú</h1>
+            <div class="hero-buttons">
+                <a href="https://wa.me/51902363640?text=Hola,%20deseo%20una%20asesor%C3%ADa%20gratuita%20para%20mis%20vacaciones." target="_blank" class="btn btn-primary" style="padding: 12px 25px; font-size: 1.1rem; border-radius: 50px; display: inline-flex; align-items: center; gap: 8px;">
+                    <svg style="width: 20px; height: 20px; fill: white;" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.953-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.49-4.22c1.54.916 3.21 1.403 4.937 1.404h.006c5.448 0 9.877-4.428 9.88-9.879.002-2.64-1.018-5.123-2.87-6.978C16.602 2.472 14.12 1.454 11.48 1.454c-5.453 0-9.877 4.428-9.88 9.88-.001 1.838.48 3.633 1.393 5.2l-.994 3.63 3.72-.976zM17.07 14.39c-.27-.135-1.594-.787-1.84-.876-.247-.09-.427-.135-.607.135-.18.27-.697.876-.853 1.057-.158.18-.315.202-.585.067-.27-.135-1.14-.42-2.172-1.34-.803-.715-1.345-1.6-1.503-1.87-.158-.27-.017-.417.118-.552.122-.122.27-.315.405-.472.135-.158.18-.27.27-.45.09-.18.045-.337-.022-.472-.068-.135-.607-1.462-.832-2l-.11-.27c-.217-.502-.45-.512-.62-.516-.16-.003-.343-.004-.527-.004-.184 0-.485.07-.738.35-.253.28-.968.946-.968 2.3 0 1.353.984 2.66 1.12 2.84.135.18 1.937 2.957 4.69 4.148.654.282 1.165.45 1.562.576.657.21 1.256.18 1.73.11.528-.08 1.594-.652 1.82-1.282.225-.63.225-1.17.157-1.282-.067-.113-.247-.18-.517-.315z"/></svg>
+                    Asesoría GRATIS
+                </a>
+                <a href="tours.html" class="btn btn-outline" style="padding: 12px 25px; font-size: 1.1rem; border-radius: 50px;">Nuestros tours</a>
+            </div>
+        </div>
+
+        <!-- Controles de Música de Fondo Cultural -->
+        <div class="hero-music-control" id="musicControl" onclick="toggleMusic()">
+            <span class="music-icon">🔇</span>
+            <span class="music-status">MÚSICA: DESACTIVADA</span>
+            <audio id="culturalAudio" loop>
+                <source src="el_condor_pasa.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </section>
+
+    <!-- Viajes de Autor (Captura 2) -->
+    <section class="viajes-autor fade-up">
+        <h2 class="section-title">Viajes de Autor en Cusco - Perú</h2>
+        <div class="viajes-grid">
+            <div class="viajes-text">
+                <h3 style="color: var(--color-text-dark); margin-bottom: 20px;">¿Quieres descubrir los nevados de Cusco de manera auténtica y en compañía de un grupo reducido de personas afines a ti?</h3>
+                <p>En Musoq Peru Expedition, vivimos los viajes con pasión, conciencia y alegría, explorando la cultura y conectando con las personas.</p>
+                <p>Nuestros viajes a los nevados son experiencias compartidas donde todos aprendemos y enseñamos, disfrutando juntos de la vida alpina. Fomentamos espacios para reconectar con la naturaleza, promoviendo la salud integral y valorándola como una fuente infinita de sanación. Tú eres una parte activa de un grupo viajero divertido y recolector de experiencias alucinantes.</p>
+            </div>
+            <div class="viajes-img">
+                <img src="images/montana_colores.png" alt="Grupo Viajeros">
+            </div>
+        </div>
+    </section>
+
+    <!-- Especialistas en (Captura 2 abajo) -->
+    <section class="especialistas fade-up delay-1">
+        <h2 class="section-title" style="text-align: left; font-size: 1.5rem;">Somos especialistas en...</h2>
+        <div class="especialistas-grid">
+            <a href="tour-valle-sagrado-vip.html" class="card-esp">
+                <img src="images/valle_sagrado.png" alt="Valle Sagrado">
+                <div class="card-esp-overlay">
+                    <div class="card-esp-price">$69 / persona</div>
+                    <div class="card-esp-title">Tour Valle Sagrado Vip</div>
+                </div>
+            </a>
+            <a href="tour-montana-7-colores.html" class="card-esp">
+                <img src="images/montana_colores.png" alt="Montaña de 7 Colores">
+                <div class="card-esp-overlay">
+                    <div class="card-esp-price">$49 / persona</div>
+                    <div class="card-esp-title">Tour Montaña 7 Colores y Valle Rojo + Entradas + Buffet</div>
+                </div>
+            </a>
+            <a href="tour-laguna-humantay.html" class="card-esp">
+                <img src="images/valle_sagrado.png" alt="Laguna Humantay">
+                <div class="card-esp-overlay">
+                    <div class="card-esp-price">$39 / persona</div>
+                    <div class="card-esp-title">Tour Laguna Humantay + Entrada + Buffet</div>
+                </div>
+            </a>
+            <a href="tour-machu-picchu-full-day.html" class="card-esp">
+                <img src="images/machu_picchu.png" alt="Machu Picchu Full Day">
+                <div class="card-esp-overlay">
+                    <div class="card-esp-price">$297 / persona</div>
+                    <div class="card-esp-title">Machu Picchu Full Day | Experiencia Integral</div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Porqué Reservar (Captura 3) -->
+    <section class="porque-reservar fade-up">
+        <h2 class="porque-title">¿Porqué reservar con <span>Musoq Peru Expedition?</span></h2>
+        <div class="porque-grid">
+            <div class="porque-item">
+                <div class="icon-circle">🏅</div>
+                <h4>Calidad de servicio</h4>
+                <p>Ofrecemos servicios de alta calidad garantizados por la satisfacción de nuestros clientes.</p>
+            </div>
+            <div class="porque-item">
+                <div class="icon-circle">🗺️</div>
+                <h4>Viajes a medida</h4>
+                <p>Diseñamos los paquetes a tus medidas exactas que se adapten a tus necesidades y preferencias.</p>
+            </div>
+            <div class="porque-item">
+                <div class="icon-circle">🌐</div>
+                <h4>Comunicación internacional</h4>
+                <p>Contamos con una amplia red de comunicación y colaboración con socios internacionales.</p>
+            </div>
+            <div class="porque-item">
+                <div class="icon-circle">⛰️</div>
+                <h4>Espíritu aventurero</h4>
+                <p>Nos apasiona brindarte un servicio basado en nuestro espíritu aventurero y entusiasmo.</p>
+            </div>
+            <div class="porque-item">
+                <div class="icon-circle">🤝</div>
+                <h4>Respeto a la comunidad local</h4>
+                <p>Estamos comprometidos con el respeto y la conexión con las comunidades locales.</p>
+            </div>
+            <div class="porque-item">
+                <div class="icon-circle">❤️</div>
+                <h4>Guías apasionados</h4>
+                <p>Nuestros guías profesionales son apasionados por brindar la mejor experiencia a nuestros viajeros.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lo Más Importante (Captura 4) -->
+    <section id="blog" class="blog-section fade-up delay-1">
+        <h2 class="section-title">Lo más importante de Musoq Peru Expedition</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <img src="images/machu_picchu.png" alt="Circuito 2">
+                <div class="blog-content">
+                    <h4>Circuito 2 en Machu Picchu: La Ruta Más Completa para Explorar la Ciudadela Inca</h4>
+                    <p>Si estás programando tu visita a Machu Picchu y te preguntas cuál de los circuitos elegir para conocer verdaderamente la ciudadela Inca, la respuesta suele ser unánime...</p>
+                    <a href="tour-circuito-2-en-machu-picchu-la-ruta-mas-completa-para-vivir-la-mejor-experiencia.html" class="btn-link">VER INFO COMPLETA »</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/valle_sagrado.png" alt="Clima Cusco">
+                <div class="blog-content">
+                    <h4>Cómo el Clima de Cusco Afecta tu Viaje: Guía Completa por Meses</h4>
+                    <p>En el fascinante mundo de la planificación de viajes a Cusco y Machu Picchu, entender el clima es fundamental para asegurar el éxito y el confort de tu aventura...</p>
+                    <a href="tour-como-el-clima-de-cusco-afecta-tu-viaje-guia-completa-por-meses.html" class="btn-link">VER INFO COMPLETA »</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/montana_colores.png" alt="Lluvias">
+                <div class="blog-content">
+                    <h4>CUSCO MACHU PICCHU EN TEMPORADA DE LLUVIAS: Una Experiencia Verde y Única</h4>
+                    <p>¿Por qué elegir Cusco y Machu Picchu en temporada de lluvias? Cuando las lluvias llegan a los Andes, la naturaleza despierta de su letargo...</p>
+                    <a href="tour-cusco-machu-picchu-en-temporada-de-lluvias-una-experiencia-verde-y-unica.html" class="btn-link">VER INFO COMPLETA »</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categorías Masonry (Captura 5) -->
+    <section class="categorias-section fade-up">
+        <div class="masonry-grid">
+            <a href="tours.html" class="cat-item cat-1">
+                <img src="images/machu_picchu.png" alt="Tours Tradicionales">
+                <div class="cat-overlay"><h3>Tours Tradicionales</h3></div>
+            </a>
+            <div class="cat-center" style="grid-column: span 1; grid-row: span 1;">
+                <h3 style="font-size: 1.8rem; color: var(--color-text-dark); margin-bottom: 10px;">Tour por categorías</h3>
+                <p style="color: #666;">Descubre la magia de los tours a tu medida</p>
+            </div>
+            <a href="tours.html" class="cat-item cat-2">
+                <img src="images/valle_sagrado.png" alt="Tours Culturales">
+                <div class="cat-overlay"><h3>Tours Culturales</h3></div>
+            </a>
+            <a href="tours.html" class="cat-item cat-3" style="grid-column: span 2; height: 200px;">
+                <img src="images/montana_colores.png" alt="Tours de Aventura">
+                <div class="cat-overlay"><h3>Tours de Aventura</h3></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <!-- Global Footer Premium -->
+    <footer class="global-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Musoq Peru Expedition" class="footer-logo" style="background: white; padding: 10px; border-radius: 10px; height: 75px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                    <p style="margin-top: 15px; font-size: 0.95rem; line-height: 1.6; color: #ccc;">Experiencias auténticas, aventuras exclusivas y turismo sostenible en Cusco y todo el Perú. Descubre el mundo en compañía de expertos locales apasionados.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#" target="_blank" title="Facebook">📘</a>
+                        <a href="#" target="_blank" title="Instagram">📸</a>
+                        <a href="#" target="_blank" title="TikTok">🎵</a>
+                        <a href="#" target="_blank" title="YouTube">📺</a>
+                        <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" title="WhatsApp">📱</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Tours Destacados</h4>
+                    <ul>
+                        <li><a href="tour-machu-picchu-full-day.html">Machu Picchu Full Day</a></li>
+                        <li><a href="tour-valle-sagrado-vip.html">Valle Sagrado VIP</a></li>
+                        <li><a href="tour-montana-7-colores.html">Montaña 7 Colores</a></li>
+                        <li><a href="tour-laguna-humantay.html">Laguna Humantay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p style="color: #ccc; margin-bottom: 10px;">📍 Portal de Panes, Plaza de Armas, Cusco - Perú</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">📱 +51 902 363 640</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">✉️ reservas@musoqperuexpedition.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Musoq Peru Expedition. Todos los derechos reservados. | Cusco - Perú.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

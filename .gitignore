@@ -1,0 +1,14 @@
+# Ignore large media files that exceed GitHub's 100MB limit
+hero_video.mp4
+
+# Python virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# IDEs and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

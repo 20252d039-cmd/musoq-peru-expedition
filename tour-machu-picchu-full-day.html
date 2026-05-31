@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machu Picchu Full Day | MUSOQ PERU EXPEDITION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tour-detalle.css">
+    <style>
+        .page-header {
+            height: 450px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/machu_picchu.png') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            animation: bgZoom 15s infinite alternate linear;
+        }
+        @keyframes bgZoom {
+            from { background-size: 100%; }
+            to { background-size: 110%; }
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Header / Navbar (Sticky) -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <div class="logo-box" style="background: white; padding: 10px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                <a href="index.html" class="logo"><img src="logo.png" alt="Musoq Peru Expedition" style="height: 50px;"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <div class="nav-dropdown">
+                    <a href="nosotros.html" class="dropdown-trigger">Nosotros</a>
+                    <div class="dropdown-menu-list">
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="metodos-de-pago.html">Métodos de pago</a>
+                        <a href="politica-de-privacidad.html">Política de privacidad</a>
+                        <a href="terminos-y-condiciones.html">Términos y condiciones</a>
+                        <a href="responsabilidad-social.html">Responsabilidad Social</a>
+                    </div>
+                </div>
+                <a href="tours.html" style="color: var(--color-primary);">Tours en Cusco</a>
+                <a href="destinos.html">Categorías</a>
+                <a href="index.html#blog">Blog</a>
+            </nav>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="btn btn-primary">Contáctanos 📱</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-link">Inicio</a>
+            <a href="nosotros.html" class="mobile-link">Nosotros</a>
+            <div class="mobile-sublinks" style="display: flex; flex-direction: column; gap: 8px; padding-left: 20px; margin-bottom: 10px;">
+                <a href="metodos-de-pago.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Métodos de pago</a>
+                <a href="politica-de-privacidad.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Política de privacidad</a>
+                <a href="terminos-y-condiciones.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Términos y condiciones</a>
+                <a href="responsabilidad-social.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Responsabilidad Social</a>
+            </div>
+            <a href="tours.html" class="mobile-link" style="color: var(--color-primary);">Tours en Cusco</a>
+            <a href="destinos.html" class="mobile-link">Categorías</a>
+            <a href="contacto.html" class="mobile-link">Contacto</a>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="btn btn-primary mobile-link" style="margin-top: 20px;">Asesoría Gratis 📱</a>
+        </div>
+    </div>
+
+    <!-- Page Header Animado -->
+    <div class="page-header">
+        <h1 class="page-title" style="font-size: 3rem; text-transform: uppercase;">Machu Picchu Full Day</h1>
+    </div>
+
+    <!-- Contenedor Principal del Tour -->
+    <main class="tour-detail-container container">
+        
+        <!-- Columna Izquierda: Contenido -->
+        <div class="tour-content">
+            
+            <!-- Tabs Nav -->
+            <div class="tour-tabs">
+                <button class="tab-btn active" onclick="openTab('resumen', this)">Resumen</button>
+                <button class="tab-btn" onclick="openTab('itinerario', this)">Itinerario Completo</button>
+                <button class="tab-btn" onclick="openTab('precios', this)">Precios</button>
+                <button class="tab-btn" onclick="openTab('recomendaciones', this)">Recomendaciones</button>
+            </div>
+
+            <!-- Título Principal -->
+            <div class="tour-header fade-up">
+                <h1 class="tour-title">Machu Picchu Full Day</h1>
+                <h2 class="tour-subtitle">Descubre una de las 7 Maravillas del Mundo</h2>
+                <div class="tour-separator"></div>
+            </div>
+
+            <!-- TAB: RESUMEN -->
+            <div id="tab-resumen" class="tab-content active fade-up">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Resumen del Tour</h3>
+                    <div class="day-content">
+                        <p>Cumple tu sueño de conocer <strong>Machu Picchu</strong>, la legendaria Ciudad Perdida de los Incas. Este tour de día completo está diseñado meticulosamente para que disfrutes de la maravilla sin preocuparte por la logística.</p>
+        <p>Viajaremos en un tren panorámico a través de la exuberante ceja de selva hasta llegar a Aguas Calientes, desde donde ascenderemos para ser testigos de la grandeza arquitectónica y espiritual de este santuario histórico.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: ITINERARIO -->
+            <div id="tab-itinerario" class="tab-content">
+                
+        <div class="itinerary-day fade-up">
+            <h3 class="day-title" style="color:var(--color-primary);">Día Único: La Magia de Machu Picchu</h3>
+            <div class="day-content">
+                <p><strong>04:00 AM:</strong> Recojo de tu hotel en Cusco y traslado en bus hacia la estación de tren en Ollantaytambo (aprox. 1 hora y 45 mins).</p>
+                <p><strong>06:10 AM:</strong> Abordamos el tren turístico. El viaje dura cerca de 2 horas ofreciendo vistas impresionantes del río Vilcanota y la transición de los andes a la selva.</p>
+                <p><strong>08:00 AM:</strong> Llegada al pueblo de Aguas Calientes. Nuestro personal te estará esperando para llevarte a la estación de buses Consettur.</p>
+                <p><strong>08:30 AM:</strong> Viaje en bus ecológico por 30 minutos (carretera Hiram Bingham) zigzagueando la montaña hasta la entrada de la ciudadela.</p>
+                <p><strong>09:30 AM:</strong> ¡Ingreso a <strong>Machu Picchu</strong>! Disfrutarás de un tour guiado de 2 a 3 horas visitando el Templo del Sol, el Intihuatana, la Plaza Principal y los sectores agrícolas/urbanos.</p>
+                <p><strong>13:00 PM:</strong> Bus de bajada a Aguas Calientes. Tiempo libre para almorzar en el pueblo y explorar sus callecitas o el mercado artesanal.</p>
+                <p><strong>16:22 PM:</strong> Tren de retorno hacia Ollantaytambo.</p>
+                <p><strong>18:30 PM:</strong> Bus de retorno desde Ollantaytambo hasta tu hotel en Cusco, llegando alrededor de las 20:30 PM.</p>
+            </div>
+        </div>
+            </div>
+
+            <!-- TAB: PRECIOS -->
+            <div id="tab-precios" class="tab-content">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Información de Precios</h3>
+                    <div class="day-content">
+                        
+        <ul style="line-height: 1.8;">
+            <li><strong>Adultos (Extranjeros):</strong> $297.00 USD</li>
+            <li><strong>Comunidad Andina (Perú, Colombia, Ecuador, Bolivia):</strong> $260.00 USD</li>
+            <li><strong>Estudiantes (con carnet universitario válido):</strong> Descuento de $20.00 USD</li>
+        </ul>
+        <br>
+        <h4>Incluye:</h4>
+        <ul>
+            <li>Traslados Cusco - Ollantaytambo - Cusco.</li>
+            <li>Tickets de Tren Turístico (Ida y Vuelta).</li>
+            <li>Tickets de Bus Aguas Calientes - Machu Picchu (Ida y Vuelta).</li>
+            <li>Ticket de ingreso a Machu Picchu (Circuito principal).</li>
+            <li>Guía oficial de turismo experto.</li>
+        </ul>
+        <br>
+        <h4>No Incluye:</h4>
+        <ul>
+            <li>Alimentación (Almuerzo en Aguas Calientes).</li>
+            <li>Ingreso a las montañas Huayna Picchu o Machu Picchu Montaña.</li>
+        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: RECOMENDACIONES -->
+            <div id="tab-recomendaciones" class="tab-content">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Recomendaciones antes de Viajar</h3>
+                    <div class="day-content">
+                        
+        <ul>
+            <li><strong>Documentos:</strong> Pasaporte original o DNI obligatorio (el mismo con el que se compró el ticket).</li>
+            <li>El clima en Machu Picchu es subtropical (caluroso y húmedo), lleva ropa ligera y transpirable.</li>
+            <li>Llevar repelente de mosquitos (muy importante).</li>
+            <li>Prohibido llevar mochilas grandes (máximo 20L), drones, palos selfie y paraguas.</li>
+            <li>Reserva con al menos 2 meses de anticipación debido al aforo limitado.</li>
+        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Columna Derecha: Sidebar Fija -->
+        <aside class="tour-sidebar">
+            
+            <!-- Caja de Reserva Flotante -->
+            <div class="booking-box glass-box fade-up">
+                <div class="booking-header">
+                    <span class="price-big">$297</span>
+                    <span class="price-small">por persona</span>
+                </div>
+                
+                <form class="booking-form" id="bookingForm" action="javascript:void(0);">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="tu@correo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Comentario o dudas</label>
+                        <textarea id="comments" rows="3" placeholder="¿Cuántas personas viajan?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" onclick="sendToWhatsApp()">Reservar por WhatsApp 📱</button>
+                </form>
+            </div>
+
+            <!-- Caja: Por qué reservar -->
+            <div class="why-book-box fade-up delay-1">
+                <h3>¿Por qué reservar con nosotros?</h3>
+                <ul class="why-book-list">
+                    <li><span class="icon">⭐</span> Calidad de servicio</li>
+                    <li><span class="icon">🗺️</span> Viajes a medida</li>
+                    <li><span class="icon">🗣️</span> Comunicación internacional</li>
+                    <li><span class="icon">⛰️</span> Espíritu aventurero</li>
+                    <li><span class="icon">🤝</span> Respeto a la comunidad</li>
+                    <li><span class="icon">👨‍🦯</span> Guías profesionales</li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- Global Footer Premium -->
+    <footer class="global-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Musoq Peru Expedition" class="footer-logo" style="background: white; padding: 10px; border-radius: 10px; height: 75px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                    <p style="margin-top: 15px; font-size: 0.95rem; line-height: 1.6; color: #ccc;">Experiencias auténticas, aventuras exclusivas y turismo sostenible en Cusco y todo el Perú. Descubre el mundo en compañía de expertos locales apasionados.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#" target="_blank" title="Facebook">📘</a>
+                        <a href="#" target="_blank" title="Instagram">📸</a>
+                        <a href="#" target="_blank" title="TikTok">🎵</a>
+                        <a href="#" target="_blank" title="YouTube">📺</a>
+                        <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" title="WhatsApp">📱</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Tours Destacados</h4>
+                    <ul>
+                        <li><a href="tour-machu-picchu-full-day.html">Machu Picchu Full Day</a></li>
+                        <li><a href="tour-valle-sagrado-vip.html">Valle Sagrado VIP</a></li>
+                        <li><a href="tour-montana-7-colores.html">Montaña 7 Colores</a></li>
+                        <li><a href="tour-laguna-humantay.html">Laguna Humantay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p style="color: #ccc; margin-bottom: 10px;">📍 Portal de Panes, Plaza de Armas, Cusco - Perú</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">📱 +51 902 363 640</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">✉️ reservas@musoqperuexpedition.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Musoq Peru Expedition. Todos los derechos reservados. | Cusco - Perú.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const comments = document.getElementById('comments').value;
+            
+            if(!name || !email) {
+                alert("Por favor completa tu nombre y correo.");
+                return;
+            }
+
+            const phone = "51902363640";
+            const text = `Hola MUSOQ PERU EXPEDITION! Me gustaría reservar el tour: Machu Picchu Full Day.%0A%0A*Mis Datos de Reserva:*%0A- Nombre: ${name}%0A- Correo: ${email}%0A- Comentarios/Dudas: ${comments}`;
+            
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        }
+
+        // JS REAL PARA TABS
+        function openTab(tabName, btn) {
+            // Ocultar todos los contenidos
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove("active");
+            }
+            // Quitar clase active a todos los botones
+            var btns = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("active");
+            }
+            // Mostrar el actual
+            document.getElementById("tab-" + tabName).classList.add("active");
+            btn.classList.add("active");
+        }
+    </script>
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos de Pago | MUSOQ PERU EXPEDITION</title>
+    <meta name="description" content="Conoce las formas y métodos de pago seguro que aceptamos en MUSOQ PERU EXPEDITION.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            height: 350px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('images/valle_sagrado.png') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        .page-title {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .izipay-container {
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .izipay-logo-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .izipay-badge {
+            background: #E81155;
+            color: white;
+            padding: 20px 40px;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 2rem;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        .cards-list {
+            margin: 25px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            font-size: 1.8rem;
+            color: #555;
+        }
+        .card-brand {
+            background: #f8f9fa;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .payment-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .btn-payment {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-family: var(--font-heading);
+            transition: var(--transition-fast);
+        }
+        .btn-payment.usd {
+            background-color: var(--color-secondary);
+        }
+        .btn-payment:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            color: white;
+        }
+        
+        /* Bank accounts section */
+        .accounts-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: var(--color-text-dark);
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+        .accounts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        .account-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            border-top: 5px solid #ccc;
+            transition: var(--transition-fast);
+        }
+        .account-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+        .account-header {
+            padding: 25px 25px 10px 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .bank-logo-text {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.4rem;
+        }
+        .account-body {
+            padding: 20px 25px 25px 25px;
+            font-size: 0.95rem;
+        }
+        .account-row {
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+        .account-label {
+            font-size: 0.8rem;
+            color: #777;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .account-value {
+            font-weight: 700;
+            color: #222;
+            font-family: monospace;
+            font-size: 1.05rem;
+            margin-top: 3px;
+        }
+        
+        /* Bank themes */
+        .bank-interbank { border-top-color: #00994C; }
+        .bank-interbank .bank-logo-text { color: #00994C; }
+        .bank-bcp { border-top-color: #FF5A00; }
+        .bank-bcp .bank-logo-text { color: #002A54; }
+        .bank-bbva { border-top-color: #004481; }
+        .bank-bbva .bank-logo-text { color: #004481; }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar (Sticky) -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <div class="logo-box" style="background: white; padding: 10px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                <a href="index.html" class="logo"><img src="logo.png" alt="Musoq Peru Expedition" style="height: 50px;"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <div class="nav-dropdown">
+                    <a href="nosotros.html" class="dropdown-trigger" style="color: var(--color-primary);">Nosotros</a>
+                    <div class="dropdown-menu-list">
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="metodos-de-pago.html">Métodos de pago</a>
+                        <a href="politica-de-privacidad.html">Política de privacidad</a>
+                        <a href="terminos-y-condiciones.html">Términos y condiciones</a>
+                        <a href="responsabilidad-social.html">Responsabilidad Social</a>
+                    </div>
+                </div>
+                <a href="tours.html">Tours en Cusco</a>
+                <a href="destinos.html">Categorías</a>
+                <a href="index.html#blog">Blog</a>
+            </nav>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="btn btn-primary">Contáctanos 📱</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-link">Inicio</a>
+            <a href="nosotros.html" class="mobile-link">Nosotros</a>
+            <div class="mobile-sublinks" style="display: flex; flex-direction: column; gap: 8px; padding-left: 20px; margin-bottom: 10px;">
+                <a href="metodos-de-pago.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center; color: var(--color-primary);">- Métodos de pago</a>
+                <a href="politica-de-privacidad.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Política de privacidad</a>
+                <a href="terminos-y-condiciones.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Términos y condiciones</a>
+                <a href="responsabilidad-social.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Responsabilidad Social</a>
+            </div>
+            <a href="tours.html" class="mobile-link">Tours en Cusco</a>
+            <a href="destinos.html" class="mobile-link">Categorías</a>
+            <a href="contacto.html" class="mobile-link">Contacto</a>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="btn btn-primary mobile-link" style="margin-top: 20px;">Asesoría Gratis 📱</a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1 class="page-title">Métodos de Pago</h1>
+    </div>
+
+    <main class="container">
+        <!-- Izipay section -->
+        <div class="izipay-container fade-up">
+            <div class="izipay-logo-box">
+                <div class="izipay-badge">izipay</div>
+                <h2 style="font-family: var(--font-heading); font-weight: 700; color: #333; font-size: 1.6rem; text-align: left; max-width: 400px; margin-left: 10px;">Con el soporte, seguridad y respaldo de la plataforma Izipay</h2>
+            </div>
+            
+            <p style="color: #666; margin-bottom: 10px;">Aceptamos todas las tarjetas de débito y crédito nacionales e internacionales:</p>
+            <div class="cards-list">
+                <span class="card-brand">💳 Visa</span>
+                <span class="card-brand">💳 Mastercard</span>
+                <span class="card-brand">💳 American Express</span>
+                <span class="card-brand">💳 Diners Club</span>
+                <span class="card-brand">📱 Apple Pay</span>
+            </div>
+
+            <p style="color: #666; margin-top: 25px;">Aceptamos los principales monederos móviles del Perú:</p>
+            <div class="cards-list">
+                <span class="card-brand">📱 Yape</span>
+                <span class="card-brand">📱 Plin</span>
+                <span class="card-brand">📱 Tunki</span>
+            </div>
+
+            <div class="payment-buttons">
+                <a href="https://wa.me/51902363640?text=Hola%20MUSOQ%20PERU%20EXPEDITION,%20deseo%20coordinar%20un%20pago%20en%20Soles." target="_blank" class="btn-payment">Pagar en Soles (S/.)</a>
+                <a href="https://wa.me/51902363640?text=Hola%20MUSOQ%20PERU%20EXPEDITION,%20deseo%20coordinar%20un%20pago%20en%20D%C3%B3lares." target="_blank" class="btn-payment usd">Pagar en Dólares ($)</a>
+            </div>
+        </div>
+
+        <!-- Cuentas bancarias -->
+        <h2 class="accounts-title fade-up">Nuestras Cuentas Bancarias</h2>
+        
+        <div class="accounts-grid">
+            <!-- Interbank -->
+            <div class="account-card bank-interbank fade-up">
+                <div class="account-header">
+                    <span style="font-size: 2rem;">💚</span>
+                    <span class="bank-logo-text">Interbank</span>
+                </div>
+                <div class="account-body">
+                    <div class="account-row">
+                        <span class="account-label">Cuenta Corriente SOLES</span>
+                        <span class="account-value">200-3001234567</span>
+                    </div>
+                    <div class="account-row">
+                        <span class="account-label">CCI SOLES</span>
+                        <span class="account-value">003-200-003001234567-34</span>
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+                    <div class="account-row">
+                        <span class="account-label">Cuenta Corriente DÓLARES</span>
+                        <span class="account-value">200-3001234589</span>
+                    </div>
+                    <div class="account-row">
+                        <span class="account-label">CCI DÓLARES</span>
+                        <span class="account-value">003-200-003001234589-32</span>
+                    </div>
+                    <div class="account-row" style="margin-top: 15px;">
+                        <span class="account-label">Beneficiario</span>
+                        <span class="account-value" style="font-family: inherit; font-size: 0.95rem;">MUSOQ PERU EXPEDITION S.A.C.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BCP -->
+            <div class="account-card bank-bcp fade-up delay-1">
+                <div class="account-header">
+                    <span style="font-size: 2rem;">💙</span>
+                    <span class="bank-logo-text">BCP</span>
+                </div>
+                <div class="account-body">
+                    <div class="account-row">
+                        <span class="account-label">Cuenta Corriente SOLES</span>
+                        <span class="account-value">305-99887766-0-12</span>
+                    </div>
+                    <div class="account-row">
+                        <span class="account-label">CCI SOLES</span>
+                        <span class="account-value">002-305-0099887766012-14</span>
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+                    <div class="account-row">
+                        <span class="account-label">Cuenta Corriente DÓLARES</span>
+                        <span class="account-value">305-99887755-1-11</span>
+                    </div>
+                    <div class="account-row">
+                        <span class="account-label">CCI DÓLARES</span>
+                        <span class="account-value">002-305-0099887755111-13</span>
+                    </div>
+                    <div class="account-row" style="margin-top: 15px;">
+                        <span class="account-label">Beneficiario</span>
+                        <span class="account-value" style="font-family: inherit; font-size: 0.95rem;">MUSOQ PERU EXPEDITION S.A.C.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BBVA -->
+            <div class="account-card bank-bbva fade-up delay-2">
+                <div class="account-header">
+                    <span style="font-size: 2rem;">💙</span>
+                    <span class="bank-logo-text">BBVA</span>
+                </div>
+                <div class="account-body">
+                    <div class="account-row">
+                        <span class="account-label">Cuenta Corriente SOLES</span>
+                        <span class="account-value">0011-0188-0100054321</span>
+                    </div>
+                    <div class="account-row">
+                        <span class="account-label">CCI SOLES</span>
+                        <span class="account-value">011-188-000100054321-45</span>
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+                    <div class="account-row">
+                        <span class="account-label">Cuenta Corriente DÓLARES</span>
+                        <span class="account-value">0011-0188-0100054399</span>
+                    </div>
+                    <div class="account-row">
+                        <span class="account-label">CCI DÓLARES</span>
+                        <span class="account-value">011-188-000100054399-42</span>
+                    </div>
+                    <div class="account-row" style="margin-top: 15px;">
+                        <span class="account-label">Beneficiario</span>
+                        <span class="account-value" style="font-family: inherit; font-size: 0.95rem;">MUSOQ PERU EXPEDITION S.A.C.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Global Footer Premium -->
+    <footer class="global-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Musoq Peru Expedition" class="footer-logo" style="background: white; padding: 10px; border-radius: 10px; height: 75px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                    <p style="margin-top: 15px; font-size: 0.95rem; line-height: 1.6; color: #ccc;">Experiencias auténticas, aventuras exclusivas y turismo sostenible en Cusco y todo el Perú. Descubre el mundo en compañía de expertos locales apasionados.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#" target="_blank" title="Facebook">📘</a>
+                        <a href="#" target="_blank" title="Instagram">📸</a>
+                        <a href="#" target="_blank" title="TikTok">🎵</a>
+                        <a href="#" target="_blank" title="YouTube">📺</a>
+                        <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" title="WhatsApp">📱</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Tours Destacados</h4>
+                    <ul>
+                        <li><a href="tour-machu-picchu-full-day.html">Machu Picchu Full Day</a></li>
+                        <li><a href="tour-valle-sagrado-vip.html">Valle Sagrado VIP</a></li>
+                        <li><a href="tour-montana-7-colores.html">Montaña 7 Colores</a></li>
+                        <li><a href="tour-laguna-humantay.html">Laguna Humantay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p style="color: #ccc; margin-bottom: 10px;">📍 Portal de Panes, Plaza de Armas, Cusco - Perú</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">📱 +51 902 363 640</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">✉️ reservas@musoqperuexpedition.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Musoq Peru Expedition. Todos los derechos reservados. | Cusco - Perú.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+</body>
+</html>

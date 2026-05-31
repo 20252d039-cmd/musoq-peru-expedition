@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Tours | MUSOQ PERU EXPEDITION</title>
+    <meta name="description" content="Descubre nuestros paquetes turísticos y tours en Cusco, Machu Picchu, Valle Sagrado y más.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            height: 350px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('images/valle_sagrado.png') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            animation: bgZoom 15s infinite alternate linear;
+        }
+        @keyframes bgZoom {
+            from { background-size: 100%; }
+            to { background-size: 110%; }
+        }
+        .page-title {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: var(--font-heading);
+            font-weight: 800;
+        }
+        .filter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--color-primary);
+            color: var(--color-text-dark);
+            padding: 8px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition-fast);
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--color-primary);
+            color: white;
+            box-shadow: 0 4px 10px rgba(217, 4, 41, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar (Sticky) -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <div class="logo-box" style="background: white; padding: 10px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                <a href="index.html" class="logo"><img src="logo.png" alt="Musoq Peru Expedition" style="height: 50px;"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <div class="nav-dropdown">
+                    <a href="nosotros.html" class="dropdown-trigger">Nosotros</a>
+                    <div class="dropdown-menu-list">
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="metodos-de-pago.html">Métodos de pago</a>
+                        <a href="politica-de-privacidad.html">Política de privacidad</a>
+                        <a href="terminos-y-condiciones.html">Términos y condiciones</a>
+                        <a href="responsabilidad-social.html">Responsabilidad Social</a>
+                    </div>
+                </div>
+                <a href="tours.html" style="color: var(--color-primary);">Tours en Cusco</a>
+                <a href="destinos.html">Categorías</a>
+                <a href="index.html#blog">Blog</a>
+            </nav>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="btn btn-primary">Contáctanos 📱</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-link">Inicio</a>
+            <a href="nosotros.html" class="mobile-link">Nosotros</a>
+            <div class="mobile-sublinks" style="display: flex; flex-direction: column; gap: 8px; padding-left: 20px; margin-bottom: 10px;">
+                <a href="metodos-de-pago.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Métodos de pago</a>
+                <a href="politica-de-privacidad.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Política de privacidad</a>
+                <a href="terminos-y-condiciones.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Términos y condiciones</a>
+                <a href="responsabilidad-social.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Responsabilidad Social</a>
+            </div>
+            <a href="tours.html" class="mobile-link" style="color: var(--color-primary);">Tours en Cusco</a>
+            <a href="destinos.html" class="mobile-link">Categorías</a>
+            <a href="contacto.html" class="mobile-link">Contacto</a>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="btn btn-primary mobile-link" style="margin-top: 20px;">Asesoría Gratis 📱</a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header fade-up">
+        <h1 class="page-title">Nuestros Tours</h1>
+    </div>
+
+    <!-- Tours Content -->
+    <main class="container">
+        <!-- Filtros -->
+        <div class="filter-nav fade-up">
+            <button class="filter-btn active">Todos</button>
+            <button class="filter-btn">Tours Culturales</button>
+            <button class="filter-btn">Tours de Aventura</button>
+            <button class="filter-btn">Tours Tradicionales</button>
+            <button class="filter-btn">Caminatas</button>
+            <button class="filter-btn">Machu Picchu</button>
+            <button class="filter-btn">Valle Sagrado</button>
+        </div>
+
+        <div class="tours-grid" style="margin-top:0;">
+
+            <!-- Tour 1: Valle Sagrado VIP -->
+            <div class="tour-card glass-card fade-up tour-item tours-culturales tours-tradicionales valle-sagrado">
+                <div class="card-img-wrapper">
+                    <img src="images/valle_sagrado.png" alt="Tour Valle Sagrado VIP">
+                    <div class="card-overlay"></div>
+                    <span class="price-tag">$69 / persona</span>
+                </div>
+                <div class="card-content">
+                    <p style="font-size: 0.8rem; color: var(--color-secondary); font-weight: bold; margin-bottom: 5px; text-transform: uppercase;">Valle Sagrado • Cultural</p>
+                    <h3 style="color:var(--color-text-dark); font-size: 1.3rem; margin-bottom: 10px;">Tour Valle Sagrado VIP</h3>
+                    <p style="color:#555; margin-bottom:20px; font-size:0.9rem; line-height: 1.5;">Explora Pisaq, Ollantaytambo, Chinchero, Moray y las Salineras de Maras en un recorrido exclusivo y eficiente con almuerzo buffet incluido.</p>
+                    <a href="tour-valle-sagrado-vip.html" class="btn btn-primary" style="width:100%; padding:12px; text-align: center; border-radius: 30px;">Ver más información</a>
+                </div>
+            </div>
+    
+            <!-- Tour 2: Montaña 7 Colores -->
+            <div class="tour-card glass-card fade-up tour-item tours-de-aventura caminatas">
+                <div class="card-img-wrapper">
+                    <img src="images/montana_colores.png" alt="Tour Montaña 7 Colores">
+                    <div class="card-overlay"></div>
+                    <span class="price-tag">$49 / persona</span>
+                </div>
+                <div class="card-content">
+                    <p style="font-size: 0.8rem; color: var(--color-secondary); font-weight: bold; margin-bottom: 5px; text-transform: uppercase;">Aventura • Caminata</p>
+                    <h3 style="color:var(--color-text-dark); font-size: 1.3rem; margin-bottom: 10px;">Tour Montaña 7 Colores y Valle Rojo</h3>
+                    <p style="color:#555; margin-bottom:20px; font-size:0.9rem; line-height: 1.5;">Conquista la famosa cumbre de Vinicunca a más de 5,000 msnm con un trekking retador y vistas de ese entorno rodeados de glaciares andinos.</p>
+                    <a href="tour-montana-7-colores.html" class="btn btn-primary" style="width:100%; padding:12px; text-align: center; border-radius: 30px;">Ver más información</a>
+                </div>
+            </div>
+    
+            <!-- Tour 3: Laguna Humantay -->
+            <div class="tour-card glass-card fade-up tour-item tours-de-aventura caminatas">
+                <div class="card-img-wrapper">
+                    <img src="images/valle_sagrado.png" alt="Tour Laguna Humantay">
+                    <div class="card-overlay"></div>
+                    <span class="price-tag">$39 / persona</span>
+                </div>
+                <div class="card-content">
+                    <p style="font-size: 0.8rem; color: var(--color-secondary); font-weight: bold; margin-bottom: 5px; text-transform: uppercase;">Aventura • Caminata</p>
+                    <h3 style="color:var(--color-text-dark); font-size: 1.3rem; margin-bottom: 10px;">Tour Laguna Humantay</h3>
+                    <p style="color:#555; margin-bottom:20px; font-size:0.9rem; line-height: 1.5;">Camina al pie del imponente nevado Salkantay y maravíllate con las aguas turquesa cristalinas de la laguna sagrada de la cordillera.</p>
+                    <a href="tour-laguna-humantay.html" class="btn btn-primary" style="width:100%; padding:12px; text-align: center; border-radius: 30px;">Ver más información</a>
+                </div>
+            </div>
+    
+            <!-- Tour 4: Machu Picchu Full Day -->
+            <div class="tour-card glass-card fade-up tour-item tours-tradicionales machu-picchu">
+                <div class="card-img-wrapper">
+                    <img src="images/machu_picchu.png" alt="Machu Picchu Full Day">
+                    <div class="card-overlay"></div>
+                    <span class="price-tag">$297 / persona</span>
+                </div>
+                <div class="card-content">
+                    <p style="font-size: 0.8rem; color: var(--color-secondary); font-weight: bold; margin-bottom: 5px; text-transform: uppercase;">Machu Picchu • Tradicional</p>
+                    <h3 style="color:var(--color-text-dark); font-size: 1.3rem; margin-bottom: 10px;">Machu Picchu Full Day</h3>
+                    <p style="color:#555; margin-bottom:20px; font-size:0.9rem; line-height: 1.5;">Cumple tu sueño de visitar la legendaria ciudadela Inca de Machu Picchu en un viaje inolvidable en tren turístico con traslados y guiado profesional.</p>
+                    <a href="tour-machu-picchu-full-day.html" class="btn btn-primary" style="width:100%; padding:12px; text-align: center; border-radius: 30px;">Ver más información</a>
+                </div>
+            </div>
+
+        </div>
+        <br><br>
+    </main>
+
+    <!-- Global Footer Premium -->
+    <footer class="global-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Musoq Peru Expedition" class="footer-logo" style="background: white; padding: 10px; border-radius: 10px; height: 75px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                    <p style="margin-top: 15px; font-size: 0.95rem; line-height: 1.6; color: #ccc;">Experiencias auténticas, aventuras exclusivas y turismo sostenible en Cusco y todo el Perú. Descubre el mundo en compañía de expertos locales apasionados.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#" target="_blank" title="Facebook">📘</a>
+                        <a href="#" target="_blank" title="Instagram">📸</a>
+                        <a href="#" target="_blank" title="TikTok">🎵</a>
+                        <a href="#" target="_blank" title="YouTube">📺</a>
+                        <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" title="WhatsApp">📱</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Tours Destacados</h4>
+                    <ul>
+                        <li><a href="tour-machu-picchu-full-day.html">Machu Picchu Full Day</a></li>
+                        <li><a href="tour-valle-sagrado-vip.html">Valle Sagrado VIP</a></li>
+                        <li><a href="tour-montana-7-colores.html">Montaña 7 Colores</a></li>
+                        <li><a href="tour-laguna-humantay.html">Laguna Humantay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p style="color: #ccc; margin-bottom: 10px;">📍 Portal de Panes, Plaza de Armas, Cusco - Perú</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">📱 +51 902 363 640</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">✉️ reservas@musoqperuexpedition.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Musoq Peru Expedition. Todos los derechos reservados. | Cusco - Perú.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Lógica para filtrar tours
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const tourItems = document.querySelectorAll('.tour-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Quitar activo a todos
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Poner activo al clickeado
+                btn.classList.add('active');
+
+                // Normalización de filtro
+                const btnText = btn.textContent.toLowerCase().trim();
+                let filterValue = btnText;
+
+                if (btnText === 'todos') {
+                    filterValue = 'todos';
+                } else if (btnText === 'tours culturales') {
+                    filterValue = 'tours-culturales';
+                } else if (btnText === 'tours de aventura') {
+                    filterValue = 'tours-de-aventura';
+                } else if (btnText === 'tours tradicionales') {
+                    filterValue = 'tours-tradicionales';
+                } else if (btnText === 'caminatas') {
+                    filterValue = 'caminatas';
+                } else if (btnText === 'machu picchu') {
+                    filterValue = 'machu-picchu';
+                } else if (btnText === 'valle sagrado') {
+                    filterValue = 'valle-sagrado';
+                }
+
+                tourItems.forEach(item => {
+                    if (filterValue === 'todos') {
+                        item.style.display = 'block';
+                    } else {
+                        if (item.classList.contains(filterValue)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+</body>
+</html>

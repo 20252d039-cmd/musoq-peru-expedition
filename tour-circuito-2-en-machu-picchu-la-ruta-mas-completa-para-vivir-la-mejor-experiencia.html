@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuito 2 en Machu Picchu: La Ruta Más Completa para Vivir la Mejor Experiencia | MUSOQ PERU EXPEDITION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tour-detalle.css">
+    <style>
+        .page-header {
+            height: 450px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/valle_sagrado.png') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            animation: bgZoom 15s infinite alternate linear;
+        }
+        @keyframes bgZoom {
+            from { background-size: 100%; }
+            to { background-size: 110%; }
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Header / Navbar (Sticky) -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Musoq Peru Expedition">
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="tours.html" style="color:var(--color-primary);">Tours</a>
+                <a href="destinos.html">Destinos</a>
+            </nav>
+            <a href="contacto.html" class="btn btn-primary">Contáctanos</a>
+        </div>
+    </header>
+
+    <!-- Page Header Animado -->
+    <div class="page-header">
+        <h1 class="page-title" style="font-size: 3rem; text-transform: uppercase;">Circuito 2 en Machu Picchu: La Ruta Más Completa para Vivir la Mejor Experiencia</h1>
+    </div>
+
+    <!-- Contenedor Principal del Tour -->
+    <main class="tour-detail-container container">
+        
+        <!-- Columna Izquierda: Contenido -->
+        <div class="tour-content">
+            
+            <!-- Tabs Nav -->
+            <div class="tour-tabs">
+                <button class="tab-btn active" onclick="openTab('resumen', this)">Resumen</button>
+                <button class="tab-btn" onclick="openTab('itinerario', this)">Itinerario Completo</button>
+                <button class="tab-btn" onclick="openTab('precios', this)">Precios</button>
+                <button class="tab-btn" onclick="openTab('recomendaciones', this)">Recomendaciones</button>
+            </div>
+
+            <!-- Título Principal -->
+            <div class="tour-header fade-up">
+                <h1 class="tour-title">Circuito 2 en Machu Picchu: La Ruta Más Completa para Vivir la Mejor Experiencia</h1>
+                <h2 class="tour-subtitle">Descubre por qué el Circuito 2 es considerado la mejor manera de recorrer Machu Picchu y explorar los sectores más emblemáticos de la ciudadela inca junto a MUSOQ PERU EXPEDITION.</h2>
+                <div class="tour-separator"></div>
+            </div>
+
+            <!-- TAB: RESUMEN -->
+            <div id="tab-resumen" class="tab-content active fade-up">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Resumen del Tour</h3>
+                    <div class="day-content">
+                        <p>Este tour te llevará por los paisajes más impresionantes, diseñado exclusivamente para viajeros que buscan calidad, aventura y conexión cultural.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: ITINERARIO -->
+            <div id="tab-itinerario" class="tab-content">
+                <div class='itinerary-day'><p>El itinerario detallado se proporcionará al momento de la reserva.</p></div>
+            </div>
+
+            <!-- TAB: PRECIOS -->
+            <div id="tab-precios" class="tab-content">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Información de Precios</h3>
+                    <div class="day-content">
+                        <p>Precio base: <strong>Consultar tarifa</strong></p><p>Incluye todos los traslados y guiado profesional.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: RECOMENDACIONES -->
+            <div id="tab-recomendaciones" class="tab-content">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Recomendaciones antes de Viajar</h3>
+                    <div class="day-content">
+                        <ul><li>Pasaporte original</li><li>Ropa cómoda y zapatillas de trekking</li><li>Bloqueador solar y sombrero</li></ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Columna Derecha: Sidebar Fija -->
+        <aside class="tour-sidebar">
+            
+            <!-- Caja de Reserva Flotante -->
+            <div class="booking-box glass-box fade-up">
+                <div class="booking-header">
+                    <span class="price-big">Consultar</span>
+                    <span class="price-small">por persona</span>
+                </div>
+                
+                <form class="booking-form" id="bookingForm" action="javascript:void(0);">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="tu@correo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Comentario o dudas</label>
+                        <textarea id="comments" rows="3" placeholder="¿Cuántas personas viajan?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" onclick="sendToWhatsApp()">Reservar por WhatsApp 📱</button>
+                </form>
+            </div>
+
+            <!-- Caja: Por qué reservar -->
+            <div class="why-book-box fade-up delay-1">
+                <h3>¿Por qué reservar con nosotros?</h3>
+                <ul class="why-book-list">
+                    <li><span class="icon">⭐</span> Calidad de servicio</li>
+                    <li><span class="icon">🗺️</span> Viajes a medida</li>
+                    <li><span class="icon">🗣️</span> Comunicación internacional</li>
+                    <li><span class="icon">⛰️</span> Espíritu aventurero</li>
+                    <li><span class="icon">🤝</span> Respeto a la comunidad</li>
+                    <li><span class="icon">👨‍🦯</span> Guías profesionales</li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- Global Footer -->
+    <footer id="contacto" class="global-footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Musoq Peru Expedition. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const comments = document.getElementById('comments').value;
+            
+            if(!name || !email) {
+                alert("Por favor completa tu nombre y correo.");
+                return;
+            }
+
+            const phone = "51902363640";
+            const text = `Hola MUSOQ PERU EXPEDITION! Me gustaría reservar el tour Circuito 2 en Machu Picchu: La Ruta Más Completa para Vivir la Mejor Experiencia.%0A*Mis Datos:*%0ANombre: ${name}%0AComentarios: ${comments}`;
+            
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        }
+
+        // JS REAL PARA TABS
+        function openTab(tabName, btn) {
+            // Ocultar todos los contenidos
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove("active");
+            }
+            // Quitar clase active a todos los botones
+            var btns = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("active");
+            }
+            // Mostrar el actual
+            document.getElementById("tab-" + tabName).classList.add("active");
+            btn.classList.add("active");
+        }
+    </script>
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+</body>
+</html>
