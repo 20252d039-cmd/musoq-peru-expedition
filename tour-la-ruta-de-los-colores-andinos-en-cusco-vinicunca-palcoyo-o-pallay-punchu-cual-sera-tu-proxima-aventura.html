@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Ruta de los Colores Andinos en Cusco: Vinicunca, Palcoyo o Pallay Punchu | MUSOQ PERU EXPEDITION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tour-detalle.css">
+    <style>
+        .page-header {
+            height: 450px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/vinicunca_hero.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            animation: bgZoom 15s infinite alternate linear;
+        }
+        @keyframes bgZoom {
+            from { background-size: 100%; }
+            to { background-size: 110%; }
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .highlight-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+        .highlight-list li {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .blog-info-box {
+            background: #fdfdfd;
+            border-left: 4px solid var(--color-primary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+        .blog-meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .blog-meta-item {
+            background: #f5f5f5;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+        .blog-meta-item strong {
+            color: var(--color-primary);
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background-color: var(--color-primary);
+            color: white;
+        }
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .section-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .image-gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .image-gallery-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        @media (max-width: 600px) {
+            .image-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Header / Navbar (Sticky) -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <div class="logo-box" style="background: white; padding: 10px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                <a href="index.html" class="logo"><img src="logo.png" alt="Musoq Peru Expedition" style="height: 50px;"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <div class="nav-dropdown">
+                    <a href="nosotros.html" class="dropdown-trigger">Nosotros</a>
+                    <div class="dropdown-menu-list">
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="metodos-de-pago.html">Métodos de pago</a>
+                        <a href="politica-de-privacidad.html">Política de privacidad</a>
+                        <a href="terminos-y-condiciones.html">Términos y condiciones</a>
+                        <a href="responsabilidad-social.html">Responsabilidad Social</a>
+                    </div>
+                </div>
+                <a href="tours.html">Tours en Cusco</a>
+                <a href="destinos.html">Categorías</a>
+                <a href="index.html#blog" style="color: var(--color-primary);">Blog</a>
+            </nav>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20monta%C3%B1as%20de%20colores." target="_blank" class="btn btn-primary">Contáctanos 📱</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-link">Inicio</a>
+            <a href="nosotros.html" class="mobile-link">Nosotros</a>
+            <div class="mobile-sublinks" style="display: flex; flex-direction: column; gap: 8px; padding-left: 20px; margin-bottom: 10px;">
+                <a href="metodos-de-pago.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Métodos de pago</a>
+                <a href="politica-de-privacidad.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Política de privacidad</a>
+                <a href="terminos-y-condiciones.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Términos y condiciones</a>
+                <a href="responsabilidad-social.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Responsabilidad Social</a>
+            </div>
+            <a href="tours.html" class="mobile-link">Tours en Cusco</a>
+            <a href="destinos.html" class="mobile-link">Categorías</a>
+            <a href="contacto.html" class="mobile-link">Contacto</a>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20monta%C3%B1as%20de%20colores." target="_blank" class="btn btn-primary mobile-link" style="margin-top: 20px;">Asesoría Gratis 📱</a>
+        </div>
+    </div>
+
+    <!-- Page Header Animado -->
+    <div class="page-header">
+        <h1 class="page-title" style="font-size: 2.2rem; text-transform: uppercase; max-width: 900px; padding: 0 20px; line-height: 1.3;">La Ruta de los Colores Andinos en Cusco</h1>
+    </div>
+
+    <!-- Contenedor Principal -->
+    <main class="tour-detail-container container">
+        
+        <!-- Columna Izquierda: Contenido -->
+        <div class="tour-content">
+            
+            <!-- Tabs Nav -->
+            <div class="tour-tabs">
+                <button class="tab-btn active" onclick="openTab('destinos', this)">Destinos</button>
+                <button class="tab-btn" onclick="openTab('diferencias', this)">Diferencias</button>
+                <button class="tab-btn" onclick="openTab('consejos', this)">Consejos</button>
+                <button class="tab-btn" onclick="openTab('temporada', this)">Mejor Época</button>
+            </div>
+
+            <!-- Título Principal -->
+            <div class="tour-header fade-up">
+                <span class="tour-duration" style="background: var(--color-primary); color: white; padding: 4px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: 600;">Junio 2026</span>
+                <h1 class="tour-title" style="margin-top: 10px;">La Ruta de los Colores Andinos en Cusco: Vinicunca, Palcoyo o Pallay Punchu, ¿cuál será tu próxima aventura?</h1>
+                <h2 class="tour-subtitle">Descubre los paisajes más coloridos de los Andes peruanos.</h2>
+                <div class="tour-separator"></div>
+            </div>
+
+            <!-- TAB: DESTINOS -->
+            <div id="tab-destinos" class="tab-content active fade-up">
+                <div class="itinerary-day">
+                    <div class="day-content">
+                        <p>Cusco no solo alberga la majestuosa ciudadela de Machu Picchu; también es hogar de algunos de los paisajes naturales más sorprendentes de Sudamérica.</p>
+                        <p>Entre ellos destacan las famosas montañas de colores: Vinicunca, Palcoyo y Pallay Punchu, tres destinos únicos que han conquistado a viajeros de todo el mundo gracias a sus impresionantes formaciones geológicas y espectaculares tonalidades naturales.</p>
+                        <p>Estas maravillas se formaron durante millones de años mediante procesos geológicos y sedimentarios que dieron origen a una increíble combinación de colores visibles actualmente.</p>
+                    </div>
+                </div>
+
+                <!-- VINICUNCA -->
+                <div class="itinerary-day" style="margin-top: 40px;">
+                    <h3 class="day-title" style="color: var(--color-primary);">🌈 VINICUNCA: LA FAMOSA MONTAÑA DE COLORES</h3>
+                    <div class="day-content">
+                        <div class="blog-meta-grid">
+                            <div class="blog-meta-item"><strong>Altitud:</strong> 5,200 m.s.n.m.</div>
+                            <div class="blog-meta-item"><strong>Dificultad:</strong> Moderada a alta</div>
+                        </div>
+                        <p>Vinicunca, conocida mundialmente como la Montaña Arcoíris, es uno de los atractivos más visitados de Perú. Sus franjas multicolores son el resultado de la acumulación de minerales durante millones de años.</p>
+                        <p>La caminata puede resultar exigente debido a la altitud, pero ofrece vistas espectaculares del paisaje andino y del imponente Nevado Ausangate.</p>
+                        
+                        <div class="image-gallery-grid">
+                            <img src="images/vinicunca_main.jpg" alt="Vinicunca Rainbow Mountain Peru">
+                            <img src="images/ausangate.jpg" alt="Ausangate Mountain Cusco">
+                        </div>
+
+                        <h4 style="margin-top: 20px;">Lo más destacado:</h4>
+                        <ul class="highlight-list">
+                            <li><span>✅</span> Fotografía clásica de la Montaña Arcoíris.</li>
+                            <li><span>✅</span> Vista del Nevado Ausangate.</li>
+                            <li><span>✅</span> Observación de alpacas y llamas.</li>
+                            <li><span>✅</span> Contacto con comunidades andinas.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PALCOYO -->
+                <div class="itinerary-day" style="margin-top: 40px;">
+                    <h3 class="day-title" style="color: var(--color-primary);">🌄 PALCOYO: LA ALTERNATIVA MÁS TRANQUILA</h3>
+                    <div class="day-content">
+                        <div class="blog-meta-grid">
+                            <div class="blog-meta-item"><strong>Altitud:</strong> 4,900 m.s.n.m.</div>
+                            <div class="blog-meta-item"><strong>Dificultad:</strong> Baja a moderada</div>
+                        </div>
+                        <p>Palcoyo es ideal para quienes desean disfrutar de montañas de colores sin realizar una caminata exigente. Aquí podrás admirar tres montañas coloridas y un impresionante bosque de piedras.</p>
+                        
+                        <div class="image-gallery-grid">
+                            <img src="images/palcoyo.png" alt="Palcoyo Rainbow Mountains Cusco">
+                            <img src="images/stone_forest.png" alt="Stone Forest Palcoyo Peru">
+                        </div>
+
+                        <h4 style="margin-top: 20px;">Lo más destacado:</h4>
+                        <ul class="highlight-list">
+                            <li><span>✅</span> Tres montañas de colores.</li>
+                            <li><span>✅</span> Bosque de Piedras.</li>
+                            <li><span>✅</span> Menor afluencia turística.</li>
+                            <li><span>✅</span> Caminata accesible.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PALLAY PUNCHU -->
+                <div class="itinerary-day" style="margin-top: 40px;">
+                    <h3 class="day-title" style="color: var(--color-primary);">🌅 PALLAY PUNCHU: EL TESORO ESCONDIDO DE CUSCO</h3>
+                    <div class="day-content">
+                        <div class="blog-meta-grid">
+                            <div class="blog-meta-item"><strong>Altitud:</strong> 4,700 m.s.n.m.</div>
+                            <div class="blog-meta-item"><strong>Dificultad:</strong> Moderada</div>
+                        </div>
+                        <p>Pallay Punchu es uno de los destinos emergentes más impresionantes de Cusco. Su característica forma de "poncho andino" y sus intensos colores rojizos crean un paisaje verdaderamente único.</p>
+                        
+                        <div class="image-gallery-grid">
+                            <img src="images/pallay_punchu.png" alt="Pallay Punchu Cusco Peru">
+                            <img src="images/laguna_langui_layo.png" alt="Langui Layo Lagoon Peru">
+                        </div>
+
+                        <h4 style="margin-top: 20px;">Lo más destacado:</h4>
+                        <ul class="highlight-list">
+                            <li><span>✅</span> Formaciones geológicas únicas.</li>
+                            <li><span>✅</span> Vista panorámica de la Laguna Langui-Layo.</li>
+                            <li><span>✅</span> Experiencia auténtica.</li>
+                            <li><span>✅</span> Menor cantidad de visitantes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: DIFERENCIAS -->
+            <div id="tab-diferencias" class="tab-content fade-up">
+                <div class="itinerary-day">
+                    <h3 class="day-title">📊 DIFERENCIAS ENTRE VINICUNCA, PALCOYO Y PALLAY PUNCHU</h3>
+                    <div class="day-content">
+                        <p>A la hora de elegir cuál de estas majestuosas montañas visitar, es importante considerar factores clave como la altitud, la exigencia física y lo que deseas experimentar durante el trayecto.</p>
+                        
+                        <img src="images/andean_mountains.jpg" alt="Andean Mountains Cusco Peru" class="section-image">
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Característica</th>
+                                    <th>Vinicunca</th>
+                                    <th>Palcoyo</th>
+                                    <th>Pallay Punchu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Altitud</strong></td>
+                                    <td>5,200 m</td>
+                                    <td>4,900 m</td>
+                                    <td>4,700 m</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Dificultad</strong></td>
+                                    <td>Alta</td>
+                                    <td>Baja a Moderada</td>
+                                    <td>Moderada</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Afluencia turística</strong></td>
+                                    <td>Alta</td>
+                                    <td>Media</td>
+                                    <td>Baja</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ideal para</strong></td>
+                                    <td>Aventureros</td>
+                                    <td>Familias</td>
+                                    <td>Exploradores</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: CONSEJOS -->
+            <div id="tab-consejos" class="tab-content">
+                <div class="itinerary-day">
+                    <h3 class="day-title">🎒 CONSEJOS IMPORTANTES PARA TU VISITA</h3>
+                    <div class="day-content">
+                        <p>Visitar destinos a gran altitud en los Andes requiere una preparación adecuada para evitar el mal de montaña y disfrutar plenamente del paisaje.</p>
+                        
+                        <img src="images/trekking_andes.jpg" alt="Trekking Andes Peru" class="section-image">
+
+                        <div class="blog-info-box">
+                            <h4 style="color: var(--color-primary); margin-bottom: 10px;">Aclimatación</h4>
+                            <p>Permanece al menos dos días en Cusco antes de realizar cualquiera de estas excursiones. Esto permitirá que tu cuerpo se adapte al menor nivel de oxígeno.</p>
+                        </div>
+
+                        <h4 style="margin-top: 25px;">Lleva contigo obligatoriamente:</h4>
+                        <ul class="highlight-list">
+                            <li><span>✔</span> Protector solar (el sol andino a gran altitud es muy fuerte).</li>
+                            <li><span>✔</span> Casaca cortaviento y ropa de abrigo en capas.</li>
+                            <li><span>✔</span> Agua abundante para mantenerte hidratado.</li>
+                            <li><span>✔</span> Snacks energéticos (chocolates, frutos secos).</li>
+                            <li><span>✔</span> Zapatos de trekking con buen agarre.</li>
+                            <li><span>✔</span> Cámara fotográfica o celular cargado.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: MEJOR ÉPOCA -->
+            <div id="tab-temporada" class="tab-content">
+                <div class="itinerary-day">
+                    <h3 class="day-title">☀️ MEJOR ÉPOCA PARA VISITAR</h3>
+                    <div class="day-content">
+                        <p>La mejor época para visitar Vinicunca, Palcoyo y Pallay Punchu es entre **abril y octubre**, durante la temporada seca de los Andes.</p>
+                        <p>En estos meses predominan los días soleados, las lluvias son muy escasas y los colores de las montañas lucen más intensos gracias a la excelente iluminación natural.</p>
+                        
+                        <img src="images/sunny_andes.jpg" alt="Sunny Andes Landscape Peru" class="section-image">
+
+                        <div class="tour-separator" style="margin: 40px 0;"></div>
+
+                        <h3 style="color: var(--color-primary); font-size: 1.5rem; margin-bottom: 15px;">🏔️ VIVE ESTA EXPERIENCIA CON MUSOQ PERU EXPEDITION</h3>
+                        <p>En **MUSOQ PERU EXPEDITION** contamos con guías profesionales y operadores locales que te acompañarán durante toda la experiencia para que disfrutes de una aventura segura, organizada e inolvidable.</p>
+                        
+                        <img src="images/tourists_exploring.jpg" alt="Tourists Exploring Cusco Peru" class="section-image">
+
+                        <h4 style="margin-top: 20px;">Nuestros servicios incluyen:</h4>
+                        <ul class="highlight-list" style="margin-bottom: 25px;">
+                            <li><span>✅</span> Transporte turístico moderno e higienizado.</li>
+                            <li><span>✅</span> Guías profesionales bilingües con amplia experiencia.</li>
+                            <li><span>✅</span> Asistencia permanente durante todo el viaje.</li>
+                            <li><span>✅</span> Experiencias auténticas y conexión local.</li>
+                        </ul>
+                        <p style="font-weight: 600; font-size: 1.1rem;">¡Reserva hoy tu aventura y descubre los colores más impresionantes de los Andes peruanos con MUSOQ PERU EXPEDITION! 🌈🏔️</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Columna Derecha: Sidebar Fija -->
+        <aside class="tour-sidebar">
+            
+            <!-- Caja de Reserva Flotante -->
+            <div class="booking-box glass-box fade-up">
+                <div class="booking-header">
+                    <span class="price-big" style="font-size: 2.2rem;">Consultar</span>
+                    <span class="price-small">asesoría gratis</span>
+                </div>
+                
+                <form class="booking-form" id="bookingForm" action="javascript:void(0);">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="tu@correo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Comentario o dudas</label>
+                        <textarea id="comments" rows="3" placeholder="¿Qué montaña te gustaría visitar?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" onclick="sendToWhatsApp()">Consultar por WhatsApp 📱</button>
+                </form>
+            </div>
+
+            <!-- Caja: Por qué reservar -->
+            <div class="why-book-box fade-up delay-1">
+                <h3>¿Por qué reservar con nosotros?</h3>
+                <ul class="why-book-list">
+                    <li><span class="icon">⭐</span> Calidad de servicio</li>
+                    <li><span class="icon">🗺️</span> Viajes a medida</li>
+                    <li><span class="icon">🗣️</span> Comunicación internacional</li>
+                    <li><span class="icon">⛰️</span> Espíritu aventurero</li>
+                    <li><span class="icon">🤝</span> Respeto a la comunidad</li>
+                    <li><span class="icon">👨‍🦯</span> Guías profesionales</li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- Global Footer Premium -->
+    <footer class="global-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Musoq Peru Expedition" class="footer-logo" style="background: white; padding: 10px; border-radius: 10px; height: 75px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                    <p style="margin-top: 15px; font-size: 0.95rem; line-height: 1.6; color: #ccc;">Experiencias auténticas, aventuras exclusivas y turismo sostenible en Cusco y todo el Perú. Descubre el mundo en compañía de expertos locales apasionados.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#" target="_blank" title="Facebook">📘</a>
+                        <a href="#" target="_blank" title="Instagram">📸</a>
+                        <a href="#" target="_blank" title="TikTok">🎵</a>
+                        <a href="#" target="_blank" title="YouTube">📺</a>
+                        <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" title="WhatsApp">📱</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Tours Destacados</h4>
+                    <ul>
+                        <li><a href="tour-machu-picchu-full-day.html">Machu Picchu Full Day</a></li>
+                        <li><a href="tour-valle-sagrado-vip.html">Valle Sagrado VIP</a></li>
+                        <li><a href="tour-montana-7-colores.html">Montaña 7 Colores</a></li>
+                        <li><a href="tour-laguna-humantay.html">Laguna Humantay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p style="color: #ccc; margin-bottom: 10px;">📍 Portal de Panes, Plaza de Armas, Cusco - Perú</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">📱 +51 902 363 640</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">✉️ reservas@musoqperuexpedition.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Musoq Peru Expedition. Todos los derechos reservados. | Cusco - Perú.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const comments = document.getElementById('comments').value;
+            
+            if(!name || !email) {
+                alert("Por favor completa tu nombre y correo.");
+                return;
+            }
+
+            const phone = "51902363640";
+            const text = `Hola MUSOQ PERU EXPEDITION! Leí su artículo de blog sobre La Ruta de los Colores Andinos y me gustaría solicitar información y tarifas de tours.%0A%0A*Mis Datos:*%0A- Nombre: ${name}%0A- Correo: ${email}%0A- Comentarios: ${comments}`;
+            
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        }
+
+        function openTab(tabName, btn) {
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove("active");
+            }
+            var btns = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("active");
+            }
+            document.getElementById("tab-" + tabName).classList.add("active");
+            btn.classList.add("active");
+        }
+    </script>
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+</body>
+</html>
