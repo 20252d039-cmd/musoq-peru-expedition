@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Waqrapukara | MUSOQ PERU EXPEDITION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tour-detalle.css">
+    <style>
+        .page-header {
+            height: 450px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/choquequirao.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            animation: bgZoom 15s infinite alternate linear;
+        }
+        @keyframes bgZoom {
+            from { background-size: 100%; }
+            to { background-size: 110%; }
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Header / Navbar (Sticky) -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <div class="logo-box" style="background: white; padding: 10px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                <a href="index.html" class="logo"><img src="logo.png" alt="Musoq Peru Expedition" style="height: 50px;"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <div class="nav-dropdown">
+                    <a href="nosotros.html" class="dropdown-trigger">Nosotros</a>
+                    <div class="dropdown-menu-list">
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="metodos-de-pago.html">Métodos de pago</a>
+                        <a href="politica-de-privacidad.html">Política de privacidad</a>
+                        <a href="terminos-y-condiciones.html">Términos y condiciones</a>
+                        <a href="responsabilidad-social.html">Responsabilidad Social</a>
+                    </div>
+                </div>
+                <a href="tours.html" style="color: var(--color-primary);">Tours en Cusco</a>
+                <a href="destinos.html">Categorías</a>
+                <a href="index.html#blog">Blog</a>
+            </nav>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20el%20Tour%20a%20Waqrapukara." target="_blank" class="btn btn-primary">Contáctanos 📱</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-link">Inicio</a>
+            <a href="nosotros.html" class="mobile-link">Nosotros</a>
+            <div class="mobile-sublinks" style="display: flex; flex-direction: column; gap: 8px; padding-left: 20px; margin-bottom: 10px;">
+                <a href="metodos-de-pago.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Métodos de pago</a>
+                <a href="politica-de-privacidad.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Política de privacidad</a>
+                <a href="terminos-y-condiciones.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Términos y condiciones</a>
+                <a href="responsabilidad-social.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Responsabilidad Social</a>
+            </div>
+            <a href="tours.html" class="mobile-link" style="color: var(--color-primary);">Tours en Cusco</a>
+            <a href="destinos.html" class="mobile-link">Categorías</a>
+            <a href="contacto.html" class="mobile-link">Contacto</a>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20el%20Tour%20a%20Waqrapukara." target="_blank" class="btn btn-primary mobile-link" style="margin-top: 20px;">Asesoría Gratis 📱</a>
+        </div>
+    </div>
+
+    <!-- Page Header Animado -->
+    <div class="page-header">
+        <h1 class="page-title" style="font-size: 3rem; text-transform: uppercase;">Tour a Waqrapukara</h1>
+    </div>
+
+    <!-- Contenedor Principal del Tour -->
+    <main class="tour-detail-container container">
+        
+        <!-- Columna Izquierda: Contenido -->
+        <div class="tour-content">
+            
+            <!-- Tabs Nav -->
+            <div class="tour-tabs">
+                <button class="tab-btn active" onclick="openTab('resumen', this)">Resumen</button>
+                <button class="tab-btn" onclick="openTab('itinerario', this)">Itinerario Completo</button>
+                <button class="tab-btn" onclick="openTab('precios', this)">Precios</button>
+                <button class="tab-btn" onclick="openTab('recomendaciones', this)">Recomendaciones</button>
+            </div>
+
+            <!-- Título Principal -->
+            <div class="tour-header fade-up">
+                <h1 class="tour-title">Tour a Waqrapukara</h1>
+                <h2 class="tour-subtitle">La Fortaleza Sagrada en Forma de Cuernos sobre el Cañón del Apurímac</h2>
+                <div class="tour-separator"></div>
+            </div>
+
+            <!-- TAB: RESUMEN -->
+            <div id="tab-resumen" class="tab-content active fade-up">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Resumen del Tour</h3>
+                    <div class="day-content">
+                        <p>Explorar la impresionante creación arquitectónica de los Incas en Waqrapukara, conocida como la "fortaleza en forma de cuerno" y situada en el desfiladero del poderoso río Apurímac, te brinda una experiencia memorable. Este destino es un tesoro oculto para aquellos viajeros en busca de algo único y menos concurrido. Este hermoso lugar sagrado combina un asombroso trabajo en piedra con formaciones naturales espectaculares y pintorescas lagunas dispersas en sus alrededores.</p>
+                        <p><strong>El Templo Suspendido entre Cañones:</strong> Vive un trekking consciente hacia Waqrapukara, un santuario inca que se alza entre cañones profundos y mesetas silenciosas del sur de Cusco. Una ruta auténtica y sin multitudes, donde el viento, la roca y el horizonte te acompañan en un camino que invita a la calma, el propósito y la conexión real con la naturaleza.</p>
+                        <p>Pensado para viajeros que buscan aventura responsable, bienestar integral y viajes de autor, Waqrapukara ofrece un escenario perfecto para reconectar contigo mismo y con la energía ancestral del Ande. Cada paso despierta libertad, resiliencia y esa sensación transformadora de estar exactamente donde debes estar.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: ITINERARIO -->
+            <div id="tab-itinerario" class="tab-content">
+                <div class="itinerary-day fade-up">
+                    <h3 class="day-title" style="color:var(--color-primary);">Itinerario Detallado</h3>
+                    <div class="day-content">
+                        <p><strong>1. Salida de Cusco y Desayuno en Cusipata:</strong> Comenzamos temprano, con la recogida en su hotel entre las 4:00 y 5:00 a.m. Una vez reunido el grupo, iniciamos la ruta con un viaje de aproximadamente 3 horas en van turística rumbo al pueblo de Santa Lucía. En el trayecto, realizaremos una parada en Cusipata para disfrutar de un desayuno reconfortante antes de continuar.</p>
+                        <p><strong>2. Santa Lucía a Punta Carretera:</strong> Al llegar a Santa Lucía, tomaremos un desvío y avanzaremos unos 15 minutos más por una carretera serpenteante hasta Punta Carretera. Aquí haremos una breve pausa de 10 minutos para realizar los últimos ajustes y preparativos, siempre priorizando el bienestar y la comodidad del grupo antes de iniciar la caminata.</p>
+                        <p><strong>3. Caminata al Santuario de Waqrapukara:</strong> Cuando todos estén listos, comenzaremos la caminata hacia Waqrapukara, un recorrido aproximado de 1 hora y 30 minutos por 2.5 km de senderos que nos conducen a esta majestuosa construcción inca. Ya en el sitio, nuestro guía compartirá una explicación clara y enriquecedora sobre su historia y significado. Luego, contarán con tiempo libre para explorar a su ritmo, conectar con el entorno y capturar la magia del lugar.</p>
+                        <p><strong>4. Box Lunch y Retorno a Cusco:</strong> Tras la visita, disfrutaremos de un almuerzo tipo box lunch preparado para reponer energías. Después, emprenderemos el regreso por el mismo camino hacia Punta Carretera, donde nuestra van estará esperándonos para retornar a Cusco. La llegada está prevista alrededor de las 6:00 p.m.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: PRECIOS -->
+            <div id="tab-precios" class="tab-content">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Información de Precios</h3>
+                    <div class="day-content">
+                        <ul style="line-height: 1.8;">
+                            <li><strong>Precio por Persona:</strong> S/. 150.00 Soles</li>
+                        </ul>
+                        <br>
+                        <h4>Incluye:</h4>
+                        <ul>
+                            <li>Recojo de su hotel.</li>
+                            <li>Transporte turístico ida y retorno.</li>
+                            <li>Servicio de guía profesional bilingüe.</li>
+                            <li>Desayuno y almuerzo (con opción vegetariana).</li>
+                            <li>Botiquín de primeros auxilios.</li>
+                            <li>Ingreso al atractivo turístico.</li>
+                        </ul>
+                        <br>
+                        <h4>No Incluye:</h4>
+                        <ul>
+                            <li>Snacks y bebidas extras.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: RECOMENDACIONES -->
+            <div id="tab-recomendaciones" class="tab-content">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Recomendaciones antes de Viajar</h3>
+                    <div class="day-content">
+                        <ul>
+                            <li><strong>Forma física:</strong> Asegúrate de estar en buena forma física, ya que la caminata hacia Waqrapukara puede ser desafiante debido al terreno empinado y la altitud (3,900 msnm).</li>
+                            <li><strong>Vestimenta de Montaña:</strong> Lleva ropa cómoda y adecuada para el clima. Incluye capas de ropa, una chaqueta impermeable o cortaviento, pantalones resistentes y calzado de trekking con buena tracción.</li>
+                            <li><strong>Protección solar:</strong> La altitud aumenta la exposición al sol, así que lleva protector solar, gafas de sol y un sombrero de ala ancha para protegerse de los rayos UV.</li>
+                            <li><strong>Hidratación y Energía:</strong> Lleva suficiente agua para mantenerte hidratado durante la caminata. También lleva snacks energéticos como frutos secos, barras de granola y frutas.</li>
+                            <li><strong>Aclimatación:</strong> Si vienes de altitudes más bajas, es importante aclimatarse antes de comenzar la caminata para evitar el mal de altura. Puedes pasar algunos días en Cusco para adaptarte gradualmente.</li>
+                            <li><strong>Equipamiento:</strong> Lleva una mochila pequeña para llevar tus pertenencias esenciales como cámara, teléfono, documentos y medicamentos.</li>
+                            <li><strong>Respeto cultural y ecológico:</strong> Respeta la naturaleza y la cultura local. No dejes basura y respeta las costumbres de las comunidades que visitas.</li>
+                            <li><strong>Comunicación:</strong> Es posible que no haya señal de teléfono en ciertas partes del camino, así que avisa a alguien de tu itinerario y hora de regreso.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Columna Derecha: Sidebar Fija -->
+        <aside class="tour-sidebar">
+            
+            <!-- Caja de Reserva Flotante -->
+            <div class="booking-box glass-box fade-up">
+                <div class="booking-header">
+                    <span class="price-big" style="font-size: 2.5rem;">S/. 150</span>
+                    <span class="price-small">por persona</span>
+                </div>
+                
+                <form class="booking-form" id="bookingForm" action="javascript:void(0);">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="tu@correo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Comentario o dudas</label>
+                        <textarea id="comments" rows="3" placeholder="¿Cuántas personas viajan?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" onclick="sendToWhatsApp()">Reservar por WhatsApp 📱</button>
+                </form>
+            </div>
+
+            <!-- Caja: Por qué reservar -->
+            <div class="why-book-box fade-up delay-1">
+                <h3>¿Por qué reservar con nosotros?</h3>
+                <ul class="why-book-list">
+                    <li><span class="icon">⭐</span> Calidad de servicio</li>
+                    <li><span class="icon">🗺️</span> Viajes a medida</li>
+                    <li><span class="icon">🗣️</span> Comunicación internacional</li>
+                    <li><span class="icon">⛰️</span> Espíritu aventurero</li>
+                    <li><span class="icon">🤝</span> Respeto a la comunidad</li>
+                    <li><span class="icon">👨‍🦯</span> Guías profesionales</li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- Global Footer Premium -->
+    <footer class="global-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Musoq Peru Expedition" class="footer-logo" style="background: white; padding: 10px; border-radius: 10px; height: 75px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                    <p style="margin-top: 15px; font-size: 0.95rem; line-height: 1.6; color: #ccc;">Experiencias auténticas, aventuras exclusivas y turismo sostenible en Cusco y todo el Perú. Descubre el mundo en compañía de expertos locales apasionados.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#" target="_blank" title="Facebook">📘</a>
+                        <a href="#" target="_blank" title="Instagram">📸</a>
+                        <a href="#" target="_blank" title="TikTok">🎵</a>
+                        <a href="#" target="_blank" title="YouTube">📺</a>
+                        <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" title="WhatsApp">📱</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Tours Destacados</h4>
+                    <ul>
+                        <li><a href="tour-machu-picchu-full-day.html">Machu Picchu Full Day</a></li>
+                        <li><a href="tour-valle-sagrado-vip.html">Valle Sagrado VIP</a></li>
+                        <li><a href="tour-montana-7-colores.html">Montaña 7 Colores</a></li>
+                        <li><a href="tour-laguna-humantay.html">Laguna Humantay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p style="color: #ccc; margin-bottom: 10px;">📍 Portal de Panes, Plaza de Armas, Cusco - Perú</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">📱 +51 902 363 640</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">✉️ reservas@musoqperuexpedition.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Musoq Peru Expedition. Todos los derechos reservados. | Cusco - Perú.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const comments = document.getElementById('comments').value;
+            
+            if(!name || !email) {
+                alert("Por favor completa tu nombre y correo.");
+                return;
+            }
+
+            const phone = "51902363640";
+            const text = `Hola MUSOQ PERU EXPEDITION! Me gustaría reservar el tour: Tour a Waqrapukara.%0A%0A*Mis Datos de Reserva:*%0A- Nombre: ${name}%0A- Correo: ${email}%0A- Comentarios/Dudas: ${comments}`;
+            
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        }
+
+        function openTab(tabName, btn) {
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove("active");
+            }
+            var btns = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("active");
+            }
+            document.getElementById("tab-" + tabName).classList.add("active");
+            btn.classList.add("active");
+        }
+    </script>
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+</body>
+</html>
