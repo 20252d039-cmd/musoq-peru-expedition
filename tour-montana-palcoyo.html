@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Montaña Palcoyo | MUSOQ PERU EXPEDITION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tour-detalle.css">
+    <style>
+        .page-header {
+            height: 450px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/montana_colores.png') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            animation: bgZoom 15s infinite alternate linear;
+        }
+        @keyframes bgZoom {
+            from { background-size: 100%; }
+            to { background-size: 110%; }
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Header / Navbar (Sticky) -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <div class="logo-box" style="background: white; padding: 10px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                <a href="index.html" class="logo"><img src="logo.png" alt="Musoq Peru Expedition" style="height: 50px;"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <div class="nav-dropdown">
+                    <a href="nosotros.html" class="dropdown-trigger">Nosotros</a>
+                    <div class="dropdown-menu-list">
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="metodos-de-pago.html">Métodos de pago</a>
+                        <a href="politica-de-privacidad.html">Política de privacidad</a>
+                        <a href="terminos-y-condiciones.html">Términos y condiciones</a>
+                        <a href="responsabilidad-social.html">Responsabilidad Social</a>
+                    </div>
+                </div>
+                <a href="tours.html" style="color: var(--color-primary);">Tours en Cusco</a>
+                <a href="destinos.html">Categorías</a>
+                <a href="index.html#blog">Blog</a>
+            </nav>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20el%20Tour%20Monta%C3%B1a%20Palcoyo." target="_blank" class="btn btn-primary">Contáctanos 📱</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-link">Inicio</a>
+            <a href="nosotros.html" class="mobile-link">Nosotros</a>
+            <div class="mobile-sublinks" style="display: flex; flex-direction: column; gap: 8px; padding-left: 20px; margin-bottom: 10px;">
+                <a href="metodos-de-pago.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Métodos de pago</a>
+                <a href="politica-de-privacidad.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Política de privacidad</a>
+                <a href="terminos-y-condiciones.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Términos y condiciones</a>
+                <a href="responsabilidad-social.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Responsabilidad Social</a>
+            </div>
+            <a href="tours.html" class="mobile-link" style="color: var(--color-primary);">Tours en Cusco</a>
+            <a href="destinos.html">Categorías</a>
+            <a href="contacto.html" class="mobile-link">Contacto</a>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20el%20Tour%20Monta%C3%B1a%20Palcoyo." target="_blank" class="btn btn-primary mobile-link" style="margin-top: 20px;">Asesoría Gratis 📱</a>
+        </div>
+    </div>
+
+    <!-- Page Header Animado -->
+    <div class="page-header">
+        <h1 class="page-title" style="font-size: 3rem; text-transform: uppercase;">Montaña Palcoyo</h1>
+    </div>
+
+    <!-- Contenedor Principal del Tour -->
+    <main class="tour-detail-container container">
+        
+        <!-- Columna Izquierda: Contenido -->
+        <div class="tour-content">
+            
+            <!-- Tabs Nav -->
+            <div class="tour-tabs">
+                <button class="tab-btn active" onclick="openTab('resumen', this)">Resumen</button>
+                <button class="tab-btn" onclick="openTab('itinerario', this)">Itinerario Completo</button>
+                <button class="tab-btn" onclick="openTab('precios', this)">Precios</button>
+                <button class="tab-btn" onclick="openTab('recomendaciones', this)">Recomendaciones</button>
+            </div>
+
+            <!-- Título Principal -->
+            <div class="tour-header fade-up">
+                <h1 class="tour-title">Tour Montaña Palcoyo</h1>
+                <h2 class="tour-subtitle">La Alternativa Pacífica y de Corta Caminata a la Montaña de Colores</h2>
+                <div class="tour-separator"></div>
+            </div>
+
+            <!-- TAB: RESUMEN -->
+            <div id="tab-resumen" class="tab-content active fade-up">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Resumen del Tour</h3>
+                    <div class="day-content">
+                        <p>Palcoyo, la alternativa a la conocida y famosa Montaña de Colores de Vinicunca en Cusco, ofrece una experiencia igualmente impresionante. A diferencia de Vinicunca, Palcoyo cuenta con su propio atractivo, el Bosque de Piedras, una caminata más corta y una menor afluencia de visitantes, lo que la hace adecuada para personas de todas las edades. Situada a tan solo 20 kilómetros al sur de Vinicunca y a una altitud de 4,800 metros sobre el nivel del mar, Palcoyo está compuesta por tres montañas de colores que destacan por sus tonalidades ocres y rojas, franjas verdes, azules y blancas. La majestuosa Cordillera de Palcoyo brinda la oportunidad de disfrutar de los hermosos paisajes de los Andes.</p>
+                        <p><strong>Descubre Palcoyo, la Montaña de Colores escondida en Cusco:</strong> El tour a la montaña Palcoyo comienza alrededor de las 4:30 de la mañana y finaliza a las 4 de la tarde en promedio. La opción más recomendable para explorar esta montaña es mediante un tour integral que abarca todos los aspectos necesarios para la aventura. Este servicio turístico engloba la recogida directamente en la puerta de tu hotel, el transporte turístico de ida y vuelta, el desayuno y almuerzo buffet, la asistencia de un guía profesional y la entrada al atractivo turístico.</p>
+                        <p>Palcoyo Montaña de Colores, al igual que su par Vinicunca, ha tenido un proceso geológico que alineó los estratos de la tierra en capas multicolores, creando un efecto único. Y a unos 200 metros del mirador se ubica un bosque de piedras, que son picos de roca de gran tamaño, que conforman un bello paisaje que recomendamos explorar, sentirá estar en un laberinto geológico, producto de millones de años de formación.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: ITINERARIO -->
+            <div id="tab-itinerario" class="tab-content">
+                <div class="itinerary-day fade-up">
+                    <h3 class="day-title" style="color:var(--color-primary);">Itinerario Detallado</h3>
+                    <div class="day-content">
+                        <p><strong>1. Recojo de Hoteles (04:30 - 05:00 AM):</strong> Nuestra van turística pasará a recogerlo directamente en su hotel en Cusco.</p>
+                        <p><strong>2. Desayuno Buffet y Puente Checacupe:</strong> Tras aproximadamente 1 hora y 30 minutos de viaje, llegaremos al restaurante La Montaña, donde disfrutaremos de un desayuno buffet. Luego, nos dirigiremos al distrito de Combapata, donde nos encontraremos con el Puente Checacupe, una estructura colgante construida por los quechuas para facilitar la conexión en el imperio Inca.</p>
+                        <p><strong>3. Hacia el Estacionamiento de Palcoyo:</strong> Proseguiremos hacia las laderas del nevado Ausangate durante una hora adicional hasta alcanzar el punto de partida de la caminata, que es el estacionamiento para vehículos. Aquí, nuestro guía nos proporcionará las instrucciones esenciales y nos entregará un bastón de trekking.</p>
+                        <p><strong>4. Caminata y Visita a Palcoyo y Bosque de Piedras (4,900 msnm):</strong> El punto de partida de la caminata se encuentra a una altitud de 4,800 metros sobre el nivel del mar, desde donde emprenderemos una caminata suave de unos 30 minutos hasta llegar al primer mirador, situado a una altitud de 4,900 msnm. Desde este punto, ya podremos apreciar la majestuosa Cordillera de Colores de Palcoyo. Tendremos tiempo libre para tomar fotos, recorrer el Bosque de Piedras y contemplar el laberinto geológico.</p>
+                        <p><strong>5. Retorno al Vehículo:</strong> Después de explorar la Cordillera de Palcoyo, volveremos por el mismo camino hasta llegar nuevamente al punto de partida de la caminata, que es el estacionamiento para vehículos.</p>
+                        <p><strong>6. Almuerzo y Retorno a Cusco:</strong> En este punto, nuestra van turística estará aguardando para llevarnos de regreso. Durante el trayecto, disfrutaremos de un almuerzo delicioso. Anticipamos llegar a la ciudad de Cusco alrededor de las 16:30 horas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: PRECIOS -->
+            <div id="tab-precios" class="tab-content">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Información de Precios</h3>
+                    <div class="day-content">
+                        <ul style="line-height: 1.8;">
+                            <li><strong>Precio por Persona:</strong> S/. 90.00 Soles</li>
+                        </ul>
+                        <br>
+                        <h4>Incluye:</h4>
+                        <ul>
+                            <li>Pickup en el hotel.</li>
+                            <li>Transporte turístico ida y vuelta.</li>
+                            <li>Guía profesional inglés, español.</li>
+                            <li>Desayuno y almuerzo buffet en el restaurante La Montaña.</li>
+                            <li>Bastón de trekking.</li>
+                            <li>Oxígeno y botiquín de primeros auxilios.</li>
+                            <li>Entrada al atractivo turístico de Palcoyo.</li>
+                        </ul>
+                        <br>
+                        <h4>No Incluye:</h4>
+                        <ul>
+                            <li>Snacks y bebidas extras.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: RECOMENDACIONES -->
+            <div id="tab-recomendaciones" class="tab-content">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Recomendaciones antes de Viajar</h3>
+                    <div class="day-content">
+                        <ul>
+                            <li><strong>Aclimatación en Cusco:</strong> Dado que la Montaña Palcoyo se encuentra a una altitud elevada, es esencial pasar al menos un par de días en Cusco antes del tour para aclimatarse y evitar problemas de salud relacionados con la altitud.</li>
+                            <li><strong>Ropa en Capas:</strong> Lleva ropa cómoda y adecuada para caminatas. Incluye capas para adaptarte a los cambios de temperatura, ya que las condiciones climáticas pueden variar rápidamente en altitudes elevadas.</li>
+                            <li><strong>Calzado de Caminata:</strong> Utiliza botas de senderismo o zapatos cómodos y resistentes que ofrezcan buen soporte para tus pies.</li>
+                            <li><strong>Protección Solar:</strong> Lleva protector solar de amplio espectro, gafas de sol y un sombrero para protegerte del sol de alta montaña.</li>
+                            <li><strong>Hidratación y Snacks:</strong> Asegúrate de llevar suficiente agua para mantenerte hidratado durante la caminata, ya que la altitud puede aumentar la pérdida de líquidos. También lleva algunos bocadillos ligeros y energéticos.</li>
+                            <li><strong>Cámara de Fotos:</strong> Si eres aficionado a la fotografía, lleva una cámara para capturar la belleza de la Montaña Palcoyo y los paisajes andinos.</li>
+                            <li><strong>Mochila Liviana:</strong> Una mochila pequeña es útil para llevar tus pertenencias personales y cualquier cosa que necesites durante el recorrido.</li>
+                            <li><strong>Respeto Ambiental:</strong> Ayuda a conservar el entorno natural y cultural respetando las normas locales y evitando dejar basura.</li>
+                            <li><strong>Indicaciones del Guía:</strong> Presta atención a las indicaciones de tu guía turístico, ya que ellos conocen la zona y pueden ofrecer valiosos consejos de seguridad y conocimiento local.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Columna Derecha: Sidebar Fija -->
+        <aside class="tour-sidebar">
+            
+            <!-- Caja de Reserva Flotante -->
+            <div class="booking-box glass-box fade-up">
+                <div class="booking-header">
+                    <span class="price-big" style="font-size: 2.5rem;">S/. 90</span>
+                    <span class="price-small">por persona</span>
+                </div>
+                
+                <form class="booking-form" id="bookingForm" action="javascript:void(0);">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="tu@correo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Comentario o dudas</label>
+                        <textarea id="comments" rows="3" placeholder="¿Cuántas personas viajan?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" onclick="sendToWhatsApp()">Reservar por WhatsApp 📱</button>
+                </form>
+            </div>
+
+            <!-- Caja: Por qué reservar -->
+            <div class="why-book-box fade-up delay-1">
+                <h3>¿Por qué reservar con nosotros?</h3>
+                <ul class="why-book-list">
+                    <li><span class="icon">⭐</span> Calidad de servicio</li>
+                    <li><span class="icon">🗺️</span> Viajes a medida</li>
+                    <li><span class="icon">🗣️</span> Comunicación internacional</li>
+                    <li><span class="icon">⛰️</span> Espíritu aventurero</li>
+                    <li><span class="icon">🤝</span> Respeto a la comunidad</li>
+                    <li><span class="icon">👨‍🦯</span> Guías profesionales</li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- Global Footer Premium -->
+    <footer class="global-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Musoq Peru Expedition" class="footer-logo" style="background: white; padding: 10px; border-radius: 10px; height: 75px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                    <p style="margin-top: 15px; font-size: 0.95rem; line-height: 1.6; color: #ccc;">Experiencias auténticas, aventuras exclusivas y turismo sostenible en Cusco y todo el Perú. Descubre el mundo en compañía de expertos locales apasionados.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#" target="_blank" title="Facebook">📘</a>
+                        <a href="#" target="_blank" title="Instagram">📸</a>
+                        <a href="#" target="_blank" title="TikTok">🎵</a>
+                        <a href="#" target="_blank" title="YouTube">📺</a>
+                        <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" title="WhatsApp">📱</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Tours Destacados</h4>
+                    <ul>
+                        <li><a href="tour-machu-picchu-full-day.html">Machu Picchu Full Day</a></li>
+                        <li><a href="tour-valle-sagrado-vip.html">Valle Sagrado VIP</a></li>
+                        <li><a href="tour-montana-7-colores.html">Montaña 7 Colores</a></li>
+                        <li><a href="tour-laguna-humantay.html">Laguna Humantay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p style="color: #ccc; margin-bottom: 10px;">📍 Portal de Panes, Plaza de Armas, Cusco - Perú</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">📱 +51 902 363 640</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">✉️ reservas@musoqperuexpedition.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Musoq Peru Expedition. Todos los derechos reservados. | Cusco - Perú.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const comments = document.getElementById('comments').value;
+            
+            if(!name || !email) {
+                alert("Por favor completa tu nombre y correo.");
+                return;
+            }
+
+            const phone = "51902363640";
+            const text = `Hola MUSOQ PERU EXPEDITION! Me gustaría reservar el tour: Tour Montaña Palcoyo.%0A%0A*Mis Datos de Reserva:*%0A- Nombre: ${name}%0A- Correo: ${email}%0A- Comentarios/Dudas: ${comments}`;
+            
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        }
+
+        function openTab(tabName, btn) {
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove("active");
+            }
+            var btns = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("active");
+            }
+            document.getElementById("tab-" + tabName).classList.add("active");
+            btn.classList.add("active");
+        }
+    </script>
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+</body>
+</html>

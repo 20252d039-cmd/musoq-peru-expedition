@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Morada de los Dioses y Laguna Piuray en Cuatrimoto | MUSOQ PERU EXPEDITION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tour-detalle.css">
+    <style>
+        .page-header {
+            height: 450px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/aventura.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            animation: bgZoom 15s infinite alternate linear;
+        }
+        @keyframes bgZoom {
+            from { background-size: 100%; }
+            to { background-size: 110%; }
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Header / Navbar (Sticky) -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <div class="logo-box" style="background: white; padding: 10px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                <a href="index.html" class="logo"><img src="logo.png" alt="Musoq Peru Expedition" style="height: 50px;"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <div class="nav-dropdown">
+                    <a href="nosotros.html" class="dropdown-trigger">Nosotros</a>
+                    <div class="dropdown-menu-list">
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="metodos-de-pago.html">Métodos de pago</a>
+                        <a href="politica-de-privacidad.html">Política de privacidad</a>
+                        <a href="terminos-y-condiciones.html">Términos y condiciones</a>
+                        <a href="responsabilidad-social.html">Responsabilidad Social</a>
+                    </div>
+                </div>
+                <a href="tours.html" style="color: var(--color-primary);">Tours en Cusco</a>
+                <a href="destinos.html">Categorías</a>
+                <a href="index.html#blog">Blog</a>
+            </nav>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20el%20Tour%20Morada%20de%20los%20Dioses%20y%20Laguna%20Piuray%20en%20Cuatrimoto." target="_blank" class="btn btn-primary">Contáctanos 📱</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-link">Inicio</a>
+            <a href="nosotros.html" class="mobile-link">Nosotros</a>
+            <div class="mobile-sublinks" style="display: flex; flex-direction: column; gap: 8px; padding-left: 20px; margin-bottom: 10px;">
+                <a href="metodos-de-pago.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Métodos de pago</a>
+                <a href="politica-de-privacidad.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Política de privacidad</a>
+                <a href="terminos-y-condiciones.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Términos y condiciones</a>
+                <a href="responsabilidad-social.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Responsabilidad Social</a>
+            </div>
+            <a href="tours.html" class="mobile-link" style="color: var(--color-primary);">Tours en Cusco</a>
+            <a href="destinos.html">Categorías</a>
+            <a href="contacto.html" class="mobile-link">Contacto</a>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20el%20Tour%20Morada%20de%20los%20Dioses%20y%20Laguna%20Piuray%20en%20Cuatrimoto." target="_blank" class="btn btn-primary mobile-link" style="margin-top: 20px;">Asesoría Gratis 📱</a>
+        </div>
+    </div>
+
+    <!-- Page Header Animado -->
+    <div class="page-header">
+        <h1 class="page-title" style="font-size: 3rem; text-transform: uppercase;">Morada de los Dioses en Cuatrimoto</h1>
+    </div>
+
+    <!-- Contenedor Principal del Tour -->
+    <main class="tour-detail-container container">
+        
+        <!-- Columna Izquierda: Contenido -->
+        <div class="tour-content">
+            
+            <!-- Tabs Nav -->
+            <div class="tour-tabs">
+                <button class="tab-btn active" onclick="openTab('resumen', this)">Resumen</button>
+                <button class="tab-btn" onclick="openTab('itinerario', this)">Itinerario Completo</button>
+                <button class="tab-btn" onclick="openTab('precios', this)">Precios</button>
+                <button class="tab-btn" onclick="openTab('recomendaciones', this)">Recomendaciones</button>
+            </div>
+
+            <!-- Título Principal -->
+            <div class="tour-header fade-up">
+                <h1 class="tour-title">Tour Morada de los Dioses y Laguna Piuray</h1>
+                <h2 class="tour-subtitle">Esculturas Gigantes Ancestrales y Vistas Espectaculares del Valle Sagrado</h2>
+                <div class="tour-separator"></div>
+            </div>
+
+            <!-- TAB: RESUMEN -->
+            <div id="tab-resumen" class="tab-content active fade-up">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Resumen del Tour</h3>
+                    <div class="day-content">
+                        <p>Esta emocionante experiencia representa una novedosa manera de acceder al Valle Sagrado de los Incas. Además, te brinda la oportunidad de explorar lugares naturales como la Laguna Piuray y el Mirador de Poroy, desde donde se pueden admirar los impresionantes picos nevados del Cusco. El recorrido en cuatrimoto tiene una duración de aproximadamente 3 horas y 30 minutos, tanto de ida como de vuelta. Nos comprometemos a proporcionar un viaje seguro y te garantizamos el mejor equipo disponible.</p>
+                        <p>Esta es una de las aventuras más impresionantes que puedes disfrutar en las cercanías de Cusco. El tour a la Morada de los Dioses está ganando popularidad debido a sus excepcionales esculturas y, lo que es más emocionante, ahora puedes llegar allí con un completo equipo de cuatrimotos. Desde el principio, nuestros servicios son exclusivos, comenzando con la recogida en la Plaza de Armas, seguida de una capacitación y prueba de manejo, el suministro de equipo de seguridad y un botiquín de primeros auxilios. Durante todo el recorrido, contarás con la supervisión de un guía oficial de turismo. La duración promedio del tour es de unas 6 horas, desde las 7 de la mañana hasta la 1 de la tarde.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: ITINERARIO -->
+            <div id="tab-itinerario" class="tab-content">
+                <div class="itinerary-day fade-up">
+                    <h3 class="day-title" style="color:var(--color-primary);">Itinerario Detallado</h3>
+                    <div class="day-content">
+                        <p><strong>1. Recojo de Cusco y Traslado a Base Tica Tica:</strong> Comenzamos recogiendo a los participantes en la Plaza de Armas y en hoteles cercanos al centro de Cusco. Luego, nos dirigimos en nuestro vehículo privado, un trayecto que dura alrededor de 25 minutos, hasta llegar a nuestra base ubicada en la zona de Sencca (Tica Tica). Una vez allí, proporcionamos el equipo de seguridad necesario y ofrecemos una breve explicación sobre cómo utilizar las cuatrimotos, que dura aproximadamente 10 minutos. Posteriormente, procedemos con el entrenamiento y la práctica en el manejo de las cuatrimotos.</p>
+                        <p><strong>2. Inicio del Recorrido:</strong> Una vez que todos estén preparados, daremos inicio a nuestra emocionante aventura en cuatrimotos.</p>
+                        <p><strong>3. Morada de los Dioses (Apukunaq Tianan):</strong> Comenzamos el ascenso en cuatrimotos hacia la zona de Qorqor, donde realizaremos nuestra primera parada en "la morada de los dioses - apukunaq tianan". Aquí, dejaremos las cuatrimotos y emprenderemos una caminata de 20 minutos para poder apreciar las diversas esculturas presentes y tomar fotografías.</p>
+                        <p><strong>4. La Fortaleza Acueducto:</strong> Una vez concluida nuestra visita, volveremos a subir a las cuatrimotos y nos dirigiremos a nuestra segunda parada en "la fortaleza acueducto", que se encuentra a unos 20 minutos adicionales de conducción. Aquí, realizaremos una caminata y una sesión de fotos que durarán aproximadamente 15 minutos.</p>
+                        <p><strong>5. Laguna de Piuray (Chinchero):</strong> Subimos nuevamente a las cuatrimotos y nos dirigimos durante unos 40 minutos adicionales hacia nuestra tercera y última parada, la Laguna de Piuray, ubicada en el distrito de Chinchero. En el transcurso, podremos admirar la belleza de la flora y fauna natural mientras atravesamos cuatro encantadoras comunidades rurales de la zona. Durante este trayecto, experimentaremos un ascenso que nos llevará a una altitud de 3,900 metros sobre el nivel del mar.</p>
+                        <p><strong>6. Retorno a Cusco:</strong> Concluiremos el tour regresando a nuestra base y luego abordaremos nuestro vehículo privado que nos llevará de regreso al centro de Cusco, marcando así el final de nuestra emocionante aventura.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: PRECIOS -->
+            <div id="tab-precios" class="tab-content">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Tabla de Precios</h3>
+                    <div class="day-content">
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 15px; text-align: left; font-size: 0.95rem;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid var(--color-primary); font-weight: bold; color: var(--color-text-dark);">
+                                    <th style="padding: 10px;">Categoría</th>
+                                    <th style="padding: 10px;">Adulto</th>
+                                    <th style="padding: 10px;">Niño</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 10px; font-weight: 600;">Extranjero</td>
+                                    <td style="padding: 10px; color: var(--color-primary); font-weight: 700;">$48.00 USD</td>
+                                    <td style="padding: 10px;">$42.00 USD</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 10px; font-weight: 600;">Comunidad Andina (CAN)</td>
+                                    <td style="padding: 10px; color: var(--color-primary); font-weight: 700;">$42.00 USD</td>
+                                    <td style="padding: 10px;">$37.00 USD</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; font-weight: 600;">Nacional (Peruano)</td>
+                                    <td style="padding: 10px; color: var(--color-primary); font-weight: 700;">$37.00 USD</td>
+                                    <td style="padding: 10px;">$34.00 USD</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <h4>Incluye:</h4>
+                        <ul>
+                            <li>Transporte turístico ida y vuelta hasta la base de cuatrimotos.</li>
+                            <li>Detalles y práctica de manejo en cuatrimoto.</li>
+                            <li>Todo el equipo de seguridad para los cuatrimotos (casco, lentes, guantes).</li>
+                            <li>Boletos de ingreso para todos nuestros destinos (Morada de los Dioses y atractivos).</li>
+                            <li>Guía de turismo profesional (español o inglés).</li>
+                            <li>Botiquín de primeros auxilios.</li>
+                        </ul>
+                        <br>
+                        <h4>No Incluye:</h4>
+                        <ul>
+                            <li>Desayuno y almuerzo.</li>
+                            <li>Snacks y bebidas adicionales.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: RECOMENDACIONES -->
+            <div id="tab-recomendaciones" class="tab-content">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Recomendaciones del Viajero</h3>
+                    <div class="day-content">
+                        <ul>
+                            <li>Viste ropa cómoda y adecuada para la actividad en exteriores. Lleva capas de ropa, ya que las condiciones climáticas pueden variar durante el día.</li>
+                            <li>Utiliza zapatos cerrados y resistentes para proteger tus pies.</li>
+                            <li>Aplica protector solar antes del tour y lleva una gorra o sombrero para protegerte del sol de alta montaña.</li>
+                            <li>Lleva suficiente agua para mantenerte hidratado durante el recorrido, ya que la altitud y la actividad física pueden provocar deshidratación.</li>
+                            <li>Lleva bocadillos y alimentos ligeros para mantener tu energía durante el tour.</li>
+                            <li>Utiliza el equipo de seguridad proporcionado, como casco y gafas, en todo momento durante el recorrido.</li>
+                            <li>Presta atención a las instrucciones y consejos de seguridad brindados durante la práctica y capacitación previas al tour.</li>
+                            <li>Si no tienes experiencia en la conducción de cuatrimotos, considera tomar una breve lección antes del tour para familiarizarte con el manejo.</li>
+                            <li>Escucha y sigue las indicaciones del guía en todo momento para garantizar la seguridad y disfrutar plenamente de la experiencia.</li>
+                            <li>Respeta las áreas naturales y sigue las normas de conservación. No dejes basura y respeta cualquier regla específica de las comunidades locales.</li>
+                            <li>Lleva una cámara o un teléfono con suficiente espacio de almacenamiento para capturar los impresionantes paisajes y momentos del tour.</li>
+                            <li>La actividad se lleva a cabo en altitudes elevadas (3,900 msnm), así que ten en cuenta la posibilidad de experimentar síntomas de mal de altura. Considera tomar medicamentos o infusiones de coca como medida preventiva.</li>
+                            <li>Asegúrate de estar en buena forma física, ya que la conducción de cuatrimotos puede ser físicamente exigente.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Columna Derecha: Sidebar Fija -->
+        <aside class="tour-sidebar">
+            
+            <!-- Caja de Reserva Flotante -->
+            <div class="booking-box glass-box fade-up">
+                <div class="booking-header">
+                    <span class="price-big" style="font-size: 2.5rem;">$37</span>
+                    <span class="price-small">por peruano / desde</span>
+                </div>
+                
+                <form class="booking-form" id="bookingForm" action="javascript:void(0);">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="tu@correo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Comentario o dudas</label>
+                        <textarea id="comments" rows="3" placeholder="¿Cuántas personas viajan?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" onclick="sendToWhatsApp()">Reservar por WhatsApp 📱</button>
+                </form>
+            </div>
+
+            <!-- Caja: Por qué reservar -->
+            <div class="why-book-box fade-up delay-1">
+                <h3>¿Por qué reservar con nosotros?</h3>
+                <ul class="why-book-list">
+                    <li><span class="icon">⭐</span> Calidad de servicio</li>
+                    <li><span class="icon">🗺️</span> Viajes a medida</li>
+                    <li><span class="icon">🗣️</span> Comunicación internacional</li>
+                    <li><span class="icon">⛰️</span> Espíritu aventurero</li>
+                    <li><span class="icon">🤝</span> Respeto a la comunidad</li>
+                    <li><span class="icon">👨‍🦯</span> Guías profesionales</li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- Global Footer Premium -->
+    <footer class="global-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Musoq Peru Expedition" class="footer-logo" style="background: white; padding: 10px; border-radius: 10px; height: 75px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                    <p style="margin-top: 15px; font-size: 0.95rem; line-height: 1.6; color: #ccc;">Experiencias auténticas, aventuras exclusivas y turismo sostenible en Cusco y todo el Perú. Descubre el mundo en compañía de expertos locales apasionados.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#" target="_blank" title="Facebook">📘</a>
+                        <a href="#" target="_blank" title="Instagram">📸</a>
+                        <a href="#" target="_blank" title="TikTok">🎵</a>
+                        <a href="#" target="_blank" title="YouTube">📺</a>
+                        <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" title="WhatsApp">📱</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Tours Destacados</h4>
+                    <ul>
+                        <li><a href="tour-machu-picchu-full-day.html">Machu Picchu Full Day</a></li>
+                        <li><a href="tour-valle-sagrado-vip.html">Valle Sagrado VIP</a></li>
+                        <li><a href="tour-montana-7-colores.html">Montaña 7 Colores</a></li>
+                        <li><a href="tour-laguna-humantay.html">Laguna Humantay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p style="color: #ccc; margin-bottom: 10px;">📍 Portal de Panes, Plaza de Armas, Cusco - Perú</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">📱 +51 902 363 640</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">✉️ reservas@musoqperuexpedition.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Musoq Peru Expedition. Todos los derechos reservados. | Cusco - Perú.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const comments = document.getElementById('comments').value;
+            
+            if(!name || !email) {
+                alert("Por favor completa tu nombre y correo.");
+                return;
+            }
+
+            const phone = "51902363640";
+            const text = `Hola MUSOQ PERU EXPEDITION! Me gustaría reservar el tour: Tour Morada de los Dioses y Laguna Piuray en Cuatrimoto.%0A%0A*Mis Datos de Reserva:*%0A- Nombre: ${name}%0A- Correo: ${email}%0A- Comentarios/Dudas: ${comments}`;
+            
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        }
+
+        function openTab(tabName, btn) {
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove("active");
+            }
+            var btns = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("active");
+            }
+            document.getElementById("tab-" + tabName).classList.add("active");
+            btn.classList.add("active");
+        }
+    </script>
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+</body>
+</html>

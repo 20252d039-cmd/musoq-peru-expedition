@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Valle Sagrado + Machu Picchu 2 Días | MUSOQ PERU EXPEDITION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tour-detalle.css">
+    <style>
+        .page-header {
+            height: 450px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/machu_picchu.png') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            animation: bgZoom 15s infinite alternate linear;
+        }
+        @keyframes bgZoom {
+            from { background-size: 100%; }
+            to { background-size: 110%; }
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hotel-pricing-block {
+            margin-bottom: 25px;
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .hotel-name {
+            font-size: 1.15rem;
+            color: var(--color-primary);
+            font-weight: 700;
+            border-bottom: 2px solid var(--color-secondary);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Header / Navbar (Sticky) -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <div class="logo-box" style="background: white; padding: 10px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                <a href="index.html" class="logo"><img src="logo.png" alt="Musoq Peru Expedition" style="height: 50px;"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <div class="nav-dropdown">
+                    <a href="nosotros.html" class="dropdown-trigger">Nosotros</a>
+                    <div class="dropdown-menu-list">
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="metodos-de-pago.html">Métodos de pago</a>
+                        <a href="politica-de-privacidad.html">Política de privacidad</a>
+                        <a href="terminos-y-condiciones.html">Términos y condiciones</a>
+                        <a href="responsabilidad-social.html">Responsabilidad Social</a>
+                    </div>
+                </div>
+                <a href="tours.html" style="color: var(--color-primary);">Tours en Cusco</a>
+                <a href="destinos.html">Categorías</a>
+                <a href="index.html#blog">Blog</a>
+            </nav>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20el%20Tour%20Valle%20Sagrado%20%2B%20Machu%20Picchu%202D1N." target="_blank" class="btn btn-primary">Contáctanos 📱</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-link">Inicio</a>
+            <a href="nosotros.html" class="mobile-link">Nosotros</a>
+            <div class="mobile-sublinks" style="display: flex; flex-direction: column; gap: 8px; padding-left: 20px; margin-bottom: 10px;">
+                <a href="metodos-de-pago.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Métodos de pago</a>
+                <a href="politica-de-privacidad.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Política de privacidad</a>
+                <a href="terminos-y-condiciones.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Términos y condiciones</a>
+                <a href="responsabilidad-social.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Responsabilidad Social</a>
+            </div>
+            <a href="tours.html" class="mobile-link" style="color: var(--color-primary);">Tours en Cusco</a>
+            <a href="destinos.html">Categorías</a>
+            <a href="contacto.html" class="mobile-link">Contacto</a>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20el%20Tour%20Valle%20Sagrado%20%2B%20Machu%20Picchu%202D1N." target="_blank" class="btn btn-primary mobile-link" style="margin-top: 20px;">Asesoría Gratis 📱</a>
+        </div>
+    </div>
+
+    <!-- Page Header Animado -->
+    <div class="page-header">
+        <h1 class="page-title" style="font-size: 3rem; text-transform: uppercase;">Valle Sagrado + Machu Picchu</h1>
+    </div>
+
+    <!-- Contenedor Principal del Tour -->
+    <main class="tour-detail-container container">
+        
+        <!-- Columna Izquierda: Contenido -->
+        <div class="tour-content">
+            
+            <!-- Tabs Nav -->
+            <div class="tour-tabs">
+                <button class="tab-btn active" onclick="openTab('resumen', this)">Resumen</button>
+                <button class="tab-btn" onclick="openTab('itinerario', this)">Itinerario Completo</button>
+                <button class="tab-btn" onclick="openTab('precios', this)">Precios</button>
+                <button class="tab-btn" onclick="openTab('recomendaciones', this)">Recomendaciones</button>
+            </div>
+
+            <!-- Título Principal -->
+            <div class="tour-header fade-up">
+                <h1 class="tour-title">Tour Valle Sagrado + Machu Picchu 2 Días 1 Noche</h1>
+                <h2 class="tour-subtitle">La Experiencia más Completa y Confortable para Conocer las Maravillas Incas</h2>
+                <div class="tour-separator"></div>
+            </div>
+
+            <!-- TAB: RESUMEN -->
+            <div id="tab-resumen" class="tab-content active fade-up">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Resumen del Tour</h3>
+                    <div class="day-content">
+                        <p>Escapa de un itinerario de viaje apresurado y sumérgete en una aventura cómoda y emocionante. Optar por el tour de 2 días al Valle Sagrado + Machu Picchu es la elección ideal para experimentar una de las mejores experiencias de tu vida. Este programa de 2 días te permitirá explorar la joya más preciada de los Andes, uno de los destinos turísticos más populares en todo el mundo.</p>
+                        <p>El recorrido de 2 días por el Valle Sagrado y Machu Picchu es la manera más completa y perfecta de experimentar una de las maravillas del mundo moderno. Este itinerario abarca la exploración de los principales destinos turísticos en el Valle Sagrado de los Incas, que incluyen los sitios arqueológicos de Pisac y Ollantaytambo. Este fértil valle es conocido por su impresionante belleza natural y sus pueblos que conservan ricas tradiciones. También se disfruta de un almuerzo buffet en Urubamba. Por supuesto, el transporte y la guía turística están incluidos.</p>
+                        <p>El segundo día del itinerario se dedica a la visita de la ciudadela inca de Machu Picchu. Los visitantes exploran este sitio arqueológico en compañía de un guía turístico durante aproximadamente 3 horas. Tendrán la oportunidad de capturar la icónica foto y descubrir las estructuras más destacadas, como el Templo del Sol, el Intihuatana, el Templo Principal y mucho más. Este tour incluye todo lo necesario para disfrutar de dos días extraordinarios en el Valle Sagrado de los Incas y Machu Picchu.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: ITINERARIO -->
+            <div id="tab-itinerario" class="tab-content">
+                
+                <!-- Día 1 -->
+                <div class="itinerary-day fade-up" style="margin-bottom: 30px;">
+                    <h3 class="day-title" style="color:var(--color-primary);">Día 1: Exploración del Valle Sagrado y Tren a Aguas Calientes</h3>
+                    <div class="day-content">
+                        <p><strong>1. Recojo de Cusco y Ruta a Pisac:</strong> La excursión comienza con la recogida en su hotel, luego se aborda la van turística que los llevará al sitio arqueológico de Pisac. Aquí exploraremos sus terrazas y cementerio incaico.</p>
+                        <p><strong>2. Almuerzo Buffet en Urubamba:</strong> Después, continuarán hacia el pintoresco pueblo de Urubamba para disfrutar de un almuerzo tipo buffet completo con platos típicos y sopas locales.</p>
+                        <p><strong>3. Sitio Arqueológico de Ollantaytambo:</strong> Por último, se emprende el viaje hacia Ollantaytambo para explorar su impresionante sitio arqueológico de piedra megalítica.</p>
+                        <p><strong>4. Viaje en Tren (15:40 PM):</strong> Aproximadamente a las 3:40 p. m. se guiará al visitante hacia la estación de Ollantaytambo, donde abordará el tren "The Voyager" con destino al pueblo de Aguas Calientes (Machu Picchu Pueblo).</p>
+                        <p><strong>5. Arribo y Noche en Aguas Calientes:</strong> Cuando llegue al pueblo de Aguas Calientes, nuestro personal del hospedaje estará esperándolo para acompañarlo a su elección de alojamiento para la noche. Todos los hoteles disponibles se ubican en el corazón del pueblo y se alcanzan fácilmente a pie.</p>
+                        <p><strong>6. Charla Informativa (19:00 hrs):</strong> En la recepción de su hotel, los viajeros recibirán una breve charla informativa por parte del guía turístico para coordinar la entrada al día siguiente. Después, tendrán tiempo libre para cenar y descansar.</p>
+                    </div>
+                </div>
+
+                <!-- Día 2 -->
+                <div class="itinerary-day fade-up">
+                    <h3 class="day-title" style="color:var(--color-secondary);">Día 2: Visita Guiada a Machu Picchu y Retorno a Cusco</h3>
+                    <div class="day-content">
+                        <p><strong>1. Desayuno en Hotel y Subida en Bus:</strong> El inicio del segundo día comienza temprano con un desayuno que está incluido en el hotel seleccionado. Después, junto con el guía turístico, nos dirigiremos a la estación de autobuses para tomar el bus de subida en un trayecto corto de 30 minutos.</p>
+                        <p><strong>2. Visita Guiada a la Ciudadela (Circuito 2):</strong> Una vez en la puerta de entrada de Machu Picchu, el grupo ingresará en compañía del guía. El recorrido atraviesa las principales construcciones incas como el Templo Principal, el Templo del Sol, el Intihuatana, el Templo del Cóndor y la Casa del Guardián para la clásica foto postal.</p>
+                        <p><strong>3. Tiempo Libre y Descenso:</strong> Pasaremos dos horas o incluso más en Machu Picchu, y al concluir esta visita, todos los turistas deberán salir de la ciudadela acompañados por su guía turístico.</p>
+                        <p><strong>4. Tiempo Libre en Aguas Calientes:</strong> A la hora programada, el turista se dirigirá a la estación de tren para regresar. Antes de eso, dispondrá de tiempo libre para almorzar en los restaurantes de Aguas Calientes.</p>
+                        <p><strong>5. Viaje de Retorno a Cusco:</strong> En Ollantaytambo, después de su viaje en tren, un representante lo guiará hacia el bus para emprender el último trayecto. Llegaremos a Cusco alrededor de las 8 de la noche con traslado directo a su hotel.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TAB: PRECIOS -->
+            <div id="tab-precios" class="tab-content">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Tarifas según Hotel en Aguas Calientes</h3>
+                    <div class="day-content">
+                        <p style="font-size: 0.9rem; color: #555; margin-bottom: 20px;">*Precios por persona expresados en dólares americanos (USD) de acuerdo al tipo de habitación y hotel seleccionado:</p>
+                        
+                        <!-- Hotel 1 -->
+                        <div class="hotel-pricing-block">
+                            <div class="hotel-name">NATIVUS HOSTEL MACHU PICCHU</div>
+                            <table style="width:100%; font-size:0.9rem; text-align:left;">
+                                <tr><td><strong>Extranjero:</strong></td><td style="color:var(--color-primary);">Simple $311 / Doble $296</td></tr>
+                                <tr><td><strong>CAN:</strong></td><td>Simple $277 / Doble $262</td></tr>
+                                <tr><td><strong>Peruano:</strong></td><td>Simple $254 / Doble $237</td></tr>
+                            </table>
+                        </div>
+
+                        <!-- Hotel 2 -->
+                        <div class="hotel-pricing-block">
+                            <div class="hotel-name">SUPERTRAMP HOSTEL</div>
+                            <table style="width:100%; font-size:0.9rem; text-align:left;">
+                                <tr><td><strong>Extranjero:</strong></td><td style="color:var(--color-primary);">Simple $322 / Doble $304</td></tr>
+                                <tr><td><strong>CAN:</strong></td><td>Simple $288 / Doble $270</td></tr>
+                                <tr><td><strong>Peruano:</strong></td><td>Simple $267 / Doble $247</td></tr>
+                            </table>
+                        </div>
+
+                        <!-- Hotel 3 -->
+                        <div class="hotel-pricing-block">
+                            <div class="hotel-name">USGAR MACHUPICCHU INN ***</div>
+                            <table style="width:100%; font-size:0.9rem; text-align:left;">
+                                <tr><td><strong>Extranjero:</strong></td><td style="color:var(--color-primary);">Simple $314 / Doble $299 / Triple $297</td></tr>
+                                <tr><td><strong>CAN:</strong></td><td>Simple $279 / Doble $266 / Triple $264</td></tr>
+                                <tr><td><strong>Peruano:</strong></td><td>Simple $258 / Doble $242 / Triple $240</td></tr>
+                            </table>
+                        </div>
+
+                        <!-- Hotel 4 -->
+                        <div class="hotel-pricing-block">
+                            <div class="hotel-name">SACRED STONE BOUTIQUE HOTEL</div>
+                            <table style="width:100%; font-size:0.9rem; text-align:left;">
+                                <tr><td><strong>Extranjero:</strong></td><td style="color:var(--color-primary);">Simple $340 / Doble $313 / Triple $306</td></tr>
+                                <tr><td><strong>CAN:</strong></td><td>Simple $307 / Doble $279 / Triple $272</td></tr>
+                                <tr><td><strong>Peruano:</strong></td><td>Simple $289 / Doble $257 / Triple $249</td></tr>
+                            </table>
+                        </div>
+
+                        <br>
+                        <h4>Incluye:</h4>
+                        <ul>
+                            <li>Pickup en el hotel.</li>
+                            <li>Transporte turístico por el Valle Sagrado de los Incas.</li>
+                            <li>Ingreso al sitio arqueológico de Pisac y Ollantaytambo.</li>
+                            <li>Tren turístico de ida y retorno (opción de tren Vistadome).</li>
+                            <li>Servicio de Guía profesional por 2 días (español o inglés).</li>
+                            <li>Almuerzo buffet en Urubamba.</li>
+                            <li>Hotel estándar en Aguas Calientes (opción hotel 3 y 4 estrellas).</li>
+                            <li>1 desayuno en el comedor del Hotel (Segundo día).</li>
+                            <li>Entrada Llaqta Machupicchu (Circuito 2).</li>
+                            <li>Bus de subida y descenso final a la ciudadela.</li>
+                            <li>Almuerzo Buffet Tinkuy (Opcional).</li>
+                            <li>Almuerzo Buffet Totos House (Opcional).</li>
+                        </ul>
+                        <br>
+                        <h4>No Incluye:</h4>
+                        <ul>
+                            <li>Almuerzo en Aguas Calientes (Día 2).</li>
+                            <li>Snacks y bebidas adicionales.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: RECOMENDACIONES -->
+            <div id="tab-recomendaciones" class="tab-content">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Recomendaciones del Viajero</h3>
+                    <div class="day-content">
+                        <ul>
+                            <li><strong>Documento de Identidad:</strong> Asegúrate de llevar tu pasaporte o documento de identidad original en formato físico. Esto es esencial para ingresar a Machu Picchu y abordar el tren.</li>
+                            <li><strong>Clima y Capas:</strong> El clima en el Valle Sagrado y Machu Picchu puede variar, así que lleva ropa cómoda y adecuada para diferentes temperaturas. Incluye capas que puedas poner o quitar.</li>
+                            <li><strong>Calzado Cómodo:</strong> Usa zapatos cómodos para caminar, especialmente si planeas explorar Machu Picchu a pie. Si tienes planeado hacer alguna caminata adicional, como subir a la montaña Huayna Picchu, lleva calzado adecuado.</li>
+                            <li><strong>Sol y Mosquitos:</strong> El sol puede ser intenso, así que lleva protector solar y un sombrero. En Aguas Calientes y la ciudadela, es posible que necesites repelente de insectos.</li>
+                            <li><strong>Altitud:</strong> Estarás a altitudes elevadas, considera llevar medicamentos para el mal de altura, como Soroche Pills, y sigue las recomendaciones de tu guía.</li>
+                            <li><strong>Hidratación y Snacks:</strong> Lleva suficiente agua para mantenerte hidratado. También es útil llevar algunos bocadillos energéticos para recargar energías.</li>
+                            <li><strong>Fotografía:</strong> No olvides llevar una cámara o teléfono con suficiente espacio de almacenamiento y batería para capturar los increíbles paisajes.</li>
+                            <li><strong>Mochila Pequeña:</strong> Una mochila pequeña te ayudará a llevar tus pertenencias de manera cómoda durante el día (Machu Picchu restringe mochilas muy grandes).</li>
+                            <li><strong>Dinero en Efectivo:</strong> Lleva suficiente dinero en efectivo, ya que en algunas áreas puede ser difícil encontrar cajeros automáticos. Esto te permitirá comprar recuerdos y comida.</li>
+                            <li><strong>Respeto Cultural:</strong> Muestra respeto por la cultura local y el entorno natural. No dejes basura, no toques ni dañes las estructuras antiguas y sigue las indicaciones de los guías locales.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Columna Derecha: Sidebar Fija -->
+        <aside class="tour-sidebar">
+            
+            <!-- Caja de Reserva Flotante -->
+            <div class="booking-box glass-box fade-up">
+                <div class="booking-header">
+                    <span class="price-big" style="font-size: 2.5rem;">$237</span>
+                    <span class="price-small">por peruano / desde</span>
+                </div>
+                
+                <form class="booking-form" id="bookingForm" action="javascript:void(0);">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="tu@correo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Comentario o dudas</label>
+                        <textarea id="comments" rows="3" placeholder="¿Cuántas personas viajan?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" onclick="sendToWhatsApp()">Reservar por WhatsApp 📱</button>
+                </form>
+            </div>
+
+            <!-- Caja: Por qué reservar -->
+            <div class="why-book-box fade-up delay-1">
+                <h3>¿Por qué reservar con nosotros?</h3>
+                <ul class="why-book-list">
+                    <li><span class="icon">⭐</span> Calidad de servicio</li>
+                    <li><span class="icon">🗺️</span> Viajes a medida</li>
+                    <li><span class="icon">🗣️</span> Comunicación internacional</li>
+                    <li><span class="icon">⛰️</span> Espíritu aventurero</li>
+                    <li><span class="icon">🤝</span> Respeto a la comunidad</li>
+                    <li><span class="icon">👨‍🦯</span> Guías profesionales</li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- Global Footer Premium -->
+    <footer class="global-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Musoq Peru Expedition" class="footer-logo" style="background: white; padding: 10px; border-radius: 10px; height: 75px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                    <p style="margin-top: 15px; font-size: 0.95rem; line-height: 1.6; color: #ccc;">Experiencias auténticas, aventuras exclusivas y turismo sostenible en Cusco y todo el Perú. Descubre el mundo en compañía de expertos locales apasionados.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#" target="_blank" title="Facebook">📘</a>
+                        <a href="#" target="_blank" title="Instagram">📸</a>
+                        <a href="#" target="_blank" title="TikTok">🎵</a>
+                        <a href="#" target="_blank" title="YouTube">📺</a>
+                        <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" title="WhatsApp">📱</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Tours Destacados</h4>
+                    <ul>
+                        <li><a href="tour-machu-picchu-full-day.html">Machu Picchu Full Day</a></li>
+                        <li><a href="tour-valle-sagrado-vip.html">Valle Sagrado VIP</a></li>
+                        <li><a href="tour-montana-7-colores.html">Montaña 7 Colores</a></li>
+                        <li><a href="tour-laguna-humantay.html">Laguna Humantay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p style="color: #ccc; margin-bottom: 10px;">📍 Portal de Panes, Plaza de Armas, Cusco - Perú</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">📱 +51 902 363 640</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">✉️ reservas@musoqperuexpedition.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Musoq Peru Expedition. Todos los derechos reservados. | Cusco - Perú.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const comments = document.getElementById('comments').value;
+            
+            if(!name || !email) {
+                alert("Por favor completa tu nombre y correo.");
+                return;
+            }
+
+            const phone = "51902363640";
+            const text = `Hola MUSOQ PERU EXPEDITION! Me gustaría reservar el tour: Valle Sagrado + Machu Picchu 2D1N.%0A%0A*Mis Datos de Reserva:*%0A- Nombre: ${name}%0A- Correo: ${email}%0A- Comentarios/Dudas: ${comments}`;
+            
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        }
+
+        function openTab(tabName, btn) {
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove("active");
+            }
+            var btns = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("active");
+            }
+            document.getElementById("tab-" + tabName).classList.add("active");
+            btn.classList.add("active");
+        }
+    </script>
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+</body>
+</html>

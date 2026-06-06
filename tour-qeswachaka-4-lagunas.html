@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Puente Q'eswachaka y 4 Lagunas | MUSOQ PERU EXPEDITION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tour-detalle.css">
+    <style>
+        .page-header {
+            height: 450px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/camino_inca.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            animation: bgZoom 15s infinite alternate linear;
+        }
+        @keyframes bgZoom {
+            from { background-size: 100%; }
+            to { background-size: 110%; }
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Header / Navbar (Sticky) -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <div class="logo-box" style="background: white; padding: 10px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                <a href="index.html" class="logo"><img src="logo.png" alt="Musoq Peru Expedition" style="height: 50px;"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <div class="nav-dropdown">
+                    <a href="nosotros.html" class="dropdown-trigger">Nosotros</a>
+                    <div class="dropdown-menu-list">
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="metodos-de-pago.html">Métodos de pago</a>
+                        <a href="politica-de-privacidad.html">Política de privacidad</a>
+                        <a href="terminos-y-condiciones.html">Términos y condiciones</a>
+                        <a href="responsabilidad-social.html">Responsabilidad Social</a>
+                    </div>
+                </div>
+                <a href="tours.html" style="color: var(--color-primary);">Tours en Cusco</a>
+                <a href="destinos.html">Categorías</a>
+                <a href="index.html#blog">Blog</a>
+            </nav>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20el%20Tour%20Puente%20Q'eswachaka%20y%204%20Lagunas." target="_blank" class="btn btn-primary">Contáctanos 📱</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-link">Inicio</a>
+            <a href="nosotros.html" class="mobile-link">Nosotros</a>
+            <div class="mobile-sublinks" style="display: flex; flex-direction: column; gap: 8px; padding-left: 20px; margin-bottom: 10px;">
+                <a href="metodos-de-pago.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Métodos de pago</a>
+                <a href="politica-de-privacidad.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Política de privacidad</a>
+                <a href="terminos-y-condiciones.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Términos y condiciones</a>
+                <a href="responsabilidad-social.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Responsabilidad Social</a>
+            </div>
+            <a href="tours.html" class="mobile-link" style="color: var(--color-primary);">Tours en Cusco</a>
+            <a href="destinos.html">Categorías</a>
+            <a href="contacto.html" class="mobile-link">Contacto</a>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20el%20Tour%20Puente%20Q'eswachaka%20y%204%20Lagunas." target="_blank" class="btn btn-primary mobile-link" style="margin-top: 20px;">Asesoría Gratis 📱</a>
+        </div>
+    </div>
+
+    <!-- Page Header Animado -->
+    <div class="page-header">
+        <h1 class="page-title" style="font-size: 3rem; text-transform: uppercase;">Puente Q'eswachaka y 4 Lagunas</h1>
+    </div>
+
+    <!-- Contenedor Principal del Tour -->
+    <main class="tour-detail-container container">
+        
+        <!-- Columna Izquierda: Contenido -->
+        <div class="tour-content">
+            
+            <!-- Tabs Nav -->
+            <div class="tour-tabs">
+                <button class="tab-btn active" onclick="openTab('resumen', this)">Resumen</button>
+                <button class="tab-btn" onclick="openTab('itinerario', this)">Itinerario Completo</button>
+                <button class="tab-btn" onclick="openTab('precios', this)">Precios</button>
+                <button class="tab-btn" onclick="openTab('recomendaciones', this)">Recomendaciones</button>
+            </div>
+
+            <!-- Título Principal -->
+            <div class="tour-header fade-up">
+                <h1 class="tour-title">Tour Puente Q'eswachaka y 4 Lagunas</h1>
+                <h2 class="tour-subtitle">El Último Puente Inca Viviente (Patrimonio Cultural UNESCO) y Paisajes Andinos</h2>
+                <div class="tour-separator"></div>
+            </div>
+
+            <!-- TAB: RESUMEN -->
+            <div id="tab-resumen" class="tab-content active fade-up">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Resumen del Tour</h3>
+                    <div class="day-content">
+                        <p>Durante la época de los Incas, se desarrolló una extensa red de caminos, destacando el Qhapaq Ñan, que conectaba los territorios del Imperio Inca y atravesaba la agreste topografía de los Andes. En este sistema, se construyeron Puentes Colgantes elaborados con fibras vegetales. Esta compleja técnica ha sido transmitida de generación en generación, y existe un puente único que ha sido renovado anualmente durante más de 500 años, conectando así el pasado con el presente. Ubicado a una altitud de 3,700 metros sobre el nivel del mar, se encuentra Q’eswachaka, el último Puente Colgante Inca. Cada año, más de 1,000 personas de cuatro comunidades se reúnen para llevar a cabo la renovación de estas estructuras. Este ritual ancestral fue reconocido por la UNESCO en 2013 como Patrimonio Cultural Inmaterial de la Humanidad. Cruzar el Puente Q’eswachaka es como dar un paso atrás en el tiempo, una experiencia que te conecta directamente con la historia y la cultura Inca.</p>
+                        <p>Observa la habilidad y cooperación necesarias para tejer este puente utilizando fibras naturales, preservando así una tradición milenaria. Luego, sumérgete en la belleza natural de cuatro impresionantes lagunas. Desde aguas cristalinas hasta paisajes de montaña, estas lagunas ofrecen escenarios verdaderamente mágicos. En este día repleto de cultura, tradición y panoramas deslumbrantes, te asombrarás con la conexión espiritual entre el pasado Inca y la vida cotidiana de las comunidades locales. Una experiencia inolvidable que te transportará a través del tiempo y te sumergirá en la belleza de la naturaleza peruana.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: ITINERARIO -->
+            <div id="tab-itinerario" class="tab-content">
+                <div class="itinerary-day fade-up">
+                    <h3 class="day-title" style="color:var(--color-primary);">Itinerario Detallado</h3>
+                    <div class="day-content">
+                        <p><strong>1. Recojo de Hoteles y Desayuno en Cusipata (04:30 – 05:00 AM):</strong> Nuestra excursión de un día en Cusco comienza con la recogida en sus hoteles, programada entre las 4:30 y las 5:00 de la mañana. Partimos en dirección al Valle Sur de Cusco, atravesando varias pequeñas localidades tradicionales de la región. Nuestra primera parada tendrá lugar en el pueblo de Cusipata, donde disfrutaremos de un delicioso desayuno. Luego, de inmediato, emprendemos nuestro viaje hacia el Mirador de Combapata.</p>
+                        <p><strong>2. Volcán de Pabellones y Yanaoca:</strong> Proseguiremos con una parada en el Mini Volcán de los Pabellones y cruzaremos por Yanaoca, uno de los ocho distritos de la provincia de Canas. Después, continuaremos nuestro viaje durante aproximadamente una hora más hasta llegar al distrito de Q’ewe.</p>
+                        <p><strong>3. Exploración de Q'eswachaka (3,600 msnm):</strong> Llegaremos al famoso puente inca de Qeswachaka, construido a base de fibras vegetales (Q'oya) con una longitud de 28.67 metros. Descenderemos a través de una serie de zigzags que nos llevarán al valle del río Apurímac, donde el antiguo puente empezará a aparecer gradualmente a la vista. Dispondremos de un amplio período para explorar este destino y cruzar el puente colgante.</p>
+                        <p><strong>4. Casa de Túpac Amaru II y Circuito de las 4 Lagunas:</strong> Después de visitar el Puente Inca, nos dirigiremos a Mosoc Llaqta, donde se encuentra la residencia histórica de Túpac Amaru II. Tras una visita guiada en esta área, nos trasladaremos al circuito de las cuatro lagunas: Pampamarca, Asnacqocha, Acopia y Pomacanchi. Luego, conduciremos 15 minutos más hacia Cusipata para disfrutar de un sabroso almuerzo buffet.</p>
+                        <p><strong>5. Retorno a Cusco:</strong> Nuestra excursión de un día en Cusco finaliza con un pintoresco viaje de regreso en la van turística hacia la ciudad de Cusco, con un estimado de llegada alrededor de las 17:15 horas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: PRECIOS -->
+            <div id="tab-precios" class="tab-content">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Tabla de Precios</h3>
+                    <div class="day-content">
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 15px; text-align: left; font-size: 0.95rem;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid var(--color-primary); font-weight: bold; color: var(--color-text-dark);">
+                                    <th style="padding: 10px;">Categoría</th>
+                                    <th style="padding: 10px;">Adulto</th>
+                                    <th style="padding: 10px;">Niño</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 10px; font-weight: 600;">Extranjero</td>
+                                    <td style="padding: 10px; color: var(--color-primary); font-weight: 700;">$38.00 USD</td>
+                                    <td style="padding: 10px;">$35.00 USD</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 10px; font-weight: 600;">Comunidad Andina (CAN)</td>
+                                    <td style="padding: 10px; color: var(--color-primary); font-weight: 700;">$36.00 USD</td>
+                                    <td style="padding: 10px;">$34.00 USD</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; font-weight: 600;">Nacional (Peruano)</td>
+                                    <td style="padding: 10px; color: var(--color-primary); font-weight: 700;">$35.00 USD</td>
+                                    <td style="padding: 10px;">$32.00 USD</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <h4>Incluye:</h4>
+                        <ul>
+                            <li>Pickup en el hotel.</li>
+                            <li>Transporte turístico ida y retorno.</li>
+                            <li>Servicio de guía profesional (español, inglés).</li>
+                            <li>Desayuno y almuerzo buffet (con opción vegetariana).</li>
+                            <li>Botiquín de primeros auxilios.</li>
+                            <li>Ingreso a los atractivos turísticos.</li>
+                        </ul>
+                        <br>
+                        <h4>No Incluye:</h4>
+                        <ul>
+                            <li>Souvenirs.</li>
+                            <li>Bebidas adicionales y snacks extras.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: RECOMENDACIONES -->
+            <div id="tab-recomendaciones" class="tab-content">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Recomendaciones antes de Viajar</h3>
+                    <div class="day-content">
+                        <ul>
+                            <li><strong>Ropa de abrigo e impermeable:</strong> Lleva ropa cómoda y adecuada para el clima. En las alturas, el clima puede ser impredecible, así que asegúrate de llevar capas, una chaqueta impermeable o cortaviento, pantalones resistentes y calzado de trekking con buena tracción.</li>
+                            <li><strong>Protección solar:</strong> La altitud aumenta la exposición al sol, así que lleva protector solar, gafas de sol y un sombrero de ala ancha para protegerse de los rayos UV.</li>
+                            <li><strong>Hidratación y Snacks:</strong> Lleva suficiente agua para mantenerte hidratado durante la caminata. También lleva snacks energéticos como frutos secos, barras de granola y frutas.</li>
+                            <li><strong>Aclimatación:</strong> Si vienes de altitudes más bajas, es importante aclimatarse antes de comenzar la caminata para evitar el mal de altura. Puedes pasar algunos días en Cusco para adaptarte gradualmente.</li>
+                            <li><strong>Mochila liviana:</strong> Lleva una mochila pequeña para llevar tus pertenencias esenciales como cámara, de ser posible, teléfono, documentos y tus medicamentos personales.</li>
+                            <li><strong>Respeto por el entorno:</strong> Respeta la naturaleza y la cultura local. No dejes basura y respeta las costumbres de las comunidades que visitas. Recuerda que el puente es renovado mediante un ritual sagrado comunitario.</li>
+                            <li><strong>Señal móvil:</strong> Puede que no haya señal de teléfono en todas las áreas de la excursión, así que avisa a alguien de tu itinerario y hora estimada de regreso.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Columna Derecha: Sidebar Fija -->
+        <aside class="tour-sidebar">
+            
+            <!-- Caja de Reserva Flotante -->
+            <div class="booking-box glass-box fade-up">
+                <div class="booking-header">
+                    <span class="price-big" style="font-size: 2.5rem;">$35</span>
+                    <span class="price-small">por peruano / desde</span>
+                </div>
+                
+                <form class="booking-form" id="bookingForm" action="javascript:void(0);">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="tu@correo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Comentario o dudas</label>
+                        <textarea id="comments" rows="3" placeholder="¿Cuántas personas viajan?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" onclick="sendToWhatsApp()">Reservar por WhatsApp 📱</button>
+                </form>
+            </div>
+
+            <!-- Caja: Por qué reservar -->
+            <div class="why-book-box fade-up delay-1">
+                <h3>¿Por qué reservar con nosotros?</h3>
+                <ul class="why-book-list">
+                    <li><span class="icon">⭐</span> Calidad de servicio</li>
+                    <li><span class="icon">🗺️</span> Viajes a medida</li>
+                    <li><span class="icon">🗣️</span> Comunicación internacional</li>
+                    <li><span class="icon">⛰️</span> Espíritu aventurero</li>
+                    <li><span class="icon">🤝</span> Respeto a la comunidad</li>
+                    <li><span class="icon">👨‍🦯</span> Guías profesionales</li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- Global Footer Premium -->
+    <footer class="global-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Musoq Peru Expedition" class="footer-logo" style="background: white; padding: 10px; border-radius: 10px; height: 75px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                    <p style="margin-top: 15px; font-size: 0.95rem; line-height: 1.6; color: #ccc;">Experiencias auténticas, aventuras exclusivas y turismo sostenible en Cusco y todo el Perú. Descubre el mundo en compañía de expertos locales apasionados.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#" target="_blank" title="Facebook">📘</a>
+                        <a href="#" target="_blank" title="Instagram">📸</a>
+                        <a href="#" target="_blank" title="TikTok">🎵</a>
+                        <a href="#" target="_blank" title="YouTube">📺</a>
+                        <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" title="WhatsApp">📱</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Tours Destacados</h4>
+                    <ul>
+                        <li><a href="tour-machu-picchu-full-day.html">Machu Picchu Full Day</a></li>
+                        <li><a href="tour-valle-sagrado-vip.html">Valle Sagrado VIP</a></li>
+                        <li><a href="tour-montana-7-colores.html">Montaña 7 Colores</a></li>
+                        <li><a href="tour-laguna-humantay.html">Laguna Humantay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p style="color: #ccc; margin-bottom: 10px;">📍 Portal de Panes, Plaza de Armas, Cusco - Perú</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">📱 +51 902 363 640</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">✉️ reservas@musoqperuexpedition.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Musoq Peru Expedition. Todos los derechos reservados. | Cusco - Perú.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const comments = document.getElementById('comments').value;
+            
+            if(!name || !email) {
+                alert("Por favor completa tu nombre y correo.");
+                return;
+            }
+
+            const phone = "51902363640";
+            const text = `Hola MUSOQ PERU EXPEDITION! Me gustaría reservar el tour: Tour Puente Qeswachaka y 4 Lagunas.%0A%0A*Mis Datos de Reserva:*%0A- Nombre: ${name}%0A- Correo: ${email}%0A- Comentarios/Dudas: ${comments}`;
+            
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        }
+
+        function openTab(tabName, btn) {
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove("active");
+            }
+            var btns = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("active");
+            }
+            document.getElementById("tab-" + tabName).classList.add("active");
+            btn.classList.add("active");
+        }
+    </script>
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+</body>
+</html>

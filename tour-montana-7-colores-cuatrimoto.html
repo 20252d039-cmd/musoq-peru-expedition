@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Montaña 7 Colores en Cuatrimoto | MUSOQ PERU EXPEDITION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tour-detalle.css">
+    <style>
+        .page-header {
+            height: 450px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/montana_colores.png') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            animation: bgZoom 15s infinite alternate linear;
+        }
+        @keyframes bgZoom {
+            from { background-size: 100%; }
+            to { background-size: 110%; }
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Header / Navbar (Sticky) -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <div class="logo-box" style="background: white; padding: 10px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                <a href="index.html" class="logo"><img src="logo.png" alt="Musoq Peru Expedition" style="height: 50px;"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <div class="nav-dropdown">
+                    <a href="nosotros.html" class="dropdown-trigger">Nosotros</a>
+                    <div class="dropdown-menu-list">
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="metodos-de-pago.html">Métodos de pago</a>
+                        <a href="politica-de-privacidad.html">Política de privacidad</a>
+                        <a href="terminos-y-condiciones.html">Términos y condiciones</a>
+                        <a href="responsabilidad-social.html">Responsabilidad Social</a>
+                    </div>
+                </div>
+                <a href="tours.html" style="color: var(--color-primary);">Tours en Cusco</a>
+                <a href="destinos.html">Categorías</a>
+                <a href="index.html#blog">Blog</a>
+            </nav>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20el%20Tour%20Monta%C3%B1a%207%20Colores%20en%20Cuatrimoto." target="_blank" class="btn btn-primary">Contáctanos 📱</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-link">Inicio</a>
+            <a href="nosotros.html" class="mobile-link">Nosotros</a>
+            <div class="mobile-sublinks" style="display: flex; flex-direction: column; gap: 8px; padding-left: 20px; margin-bottom: 10px;">
+                <a href="metodos-de-pago.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Métodos de pago</a>
+                <a href="politica-de-privacidad.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Política de privacidad</a>
+                <a href="terminos-y-condiciones.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Términos y condiciones</a>
+                <a href="responsabilidad-social.html" class="mobile-link" style="font-size: 1rem; opacity: 0.85; text-align: center;">- Responsabilidad Social</a>
+            </div>
+            <a href="tours.html" class="mobile-link" style="color: var(--color-primary);">Tours en Cusco</a>
+            <a href="destinos.html">Categorías</a>
+            <a href="contacto.html" class="mobile-link">Contacto</a>
+            <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20el%20Tour%20Monta%C3%B1a%207%20Colores%20en%20Cuatrimoto." target="_blank" class="btn btn-primary mobile-link" style="margin-top: 20px;">Asesoría Gratis 📱</a>
+        </div>
+    </div>
+
+    <!-- Page Header Animado -->
+    <div class="page-header">
+        <h1 class="page-title" style="font-size: 3rem; text-transform: uppercase;">Montaña 7 Colores en Cuatrimoto</h1>
+    </div>
+
+    <!-- Contenedor Principal del Tour -->
+    <main class="tour-detail-container container">
+        
+        <!-- Columna Izquierda: Contenido -->
+        <div class="tour-content">
+            
+            <!-- Tabs Nav -->
+            <div class="tour-tabs">
+                <button class="tab-btn active" onclick="openTab('resumen', this)">Resumen</button>
+                <button class="tab-btn" onclick="openTab('itinerario', this)">Itinerario Completo</button>
+                <button class="tab-btn" onclick="openTab('precios', this)">Precios</button>
+                <button class="tab-btn" onclick="openTab('recomendaciones', this)">Recomendaciones</button>
+            </div>
+
+            <!-- Título Principal -->
+            <div class="tour-header fade-up">
+                <h1 class="tour-title">Tour Montaña 7 Colores en Cuatrimoto</h1>
+                <h2 class="tour-subtitle">La Ruta más Rápida y Llena de Adrenalina para Visitar Vinicunca</h2>
+                <div class="tour-separator"></div>
+            </div>
+
+            <!-- TAB: RESUMEN -->
+            <div id="tab-resumen" class="tab-content active fade-up">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Resumen del Tour</h3>
+                    <div class="day-content">
+                        <p>El recorrido en cuatrimoto por la Montaña de Colores ha sido diseñado para ofrecer una experiencia más accesible y brindar una vista privilegiada de la montaña de colores durante su visita. Además, proporciona la oportunidad de disfrutar de los hermosos paisajes de alta montaña en la cordillera del Vilcanota, así como de observar la diversa flora y fauna de la región. También, se minimiza la necesidad de hacer una caminata extenuante, ya que llegarás al mirador de la montaña Vinicunca con facilidad, desde donde podrás admirar su majestuoso escenario rodeado de picos nevados y montañas de diversos colores. Todo esto mientras vives la emocionante aventura en cuatrimoto.</p>
+                        <p>El Tour en Cuatrimoto te brinda la posibilidad de experimentar la Montaña de Colores sin necesidad de un gran esfuerzo físico. Este recorrido está diseñado para los amantes de la aventura y la adrenalina, que desean explorar a una altitud superior a los 4,000 metros sobre el nivel del mar, rodeados de impresionantes cordilleras y la majestuosa presencia del Ausangate. Ofrecemos dos horarios de salida para el tour hacia la Montaña de Colores en cuatrimoto.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: ITINERARIO -->
+            <div id="tab-itinerario" class="tab-content">
+                
+                <!-- Turno 1 -->
+                <div class="itinerary-day fade-up" style="margin-bottom: 30px;">
+                    <h3 class="day-title" style="color:var(--color-primary);">Opción 1: Primer Turno (Mañana)</h3>
+                    <div class="day-content">
+                        <p><strong>1. Recojo de Hoteles (03:30 - 04:00 AM):</strong> Comenzamos nuestro viaje al tour de la Montaña de Colores en cuatrimoto recogiendo a los participantes en sus respectivos hoteles. Luego, los trasladaremos a nuestro restaurante, a 1 hora y 30 minutos de Cusco. Durante el trayecto, se les proporcionará una manta para abrigarse.</p>
+                        <p><strong>2. Desayuno Buffet:</strong> Luego de llegar a nuestro restaurante, disfrutaremos de un sabroso desayuno buffet andino.</p>
+                        <p><strong>3. Traslado a Japura:</strong> Proseguimos con el viaje en la van turística por una hora adicional hasta llegar a Japura, la base de las cuatrimotos. Nuestro guía proporcionará las instrucciones necesarias para manejar de manera adecuada.</p>
+                        <p><strong>4. Aventura en Cuatrimoto:</strong> Comenzamos el trayecto en las motos, divisando camélidos andinos como llamas y alpacas. Tras 1 hora y media de recorrido, llegamos al área de estacionamiento.</p>
+                        <p><strong>5. Caminata Mirador Vinicunca:</strong> Iniciamos una caminata suave de aproximadamente 50 minutos (2 kilómetros) hacia el mirador principal de la Montaña de Colores. En el lugar dispondrás de tiempo libre para fotos y videos junto con la explicación del guía profesional.</p>
+                        <p><strong>6. Descenso y Almuerzo Buffet:</strong> Regresamos a las cuatrimotos y manejamos de vuelta a Japura. Subimos a la van turística rumbo al restaurante (1 hora) para disfrutar de un delicioso almuerzo buffet.</p>
+                        <p><strong>7. Retorno a Cusco:</strong> Concluida la experiencia, nos dirigimos de regreso a la ciudad de Cusco, finalizando el servicio en el centro histórico.</p>
+                    </div>
+                </div>
+
+                <!-- Turno 2 -->
+                <div class="itinerary-day fade-up">
+                    <h3 class="day-title" style="color:var(--color-secondary);">Opción 2: Segundo Turno (Medio Día)</h3>
+                    <div class="day-content">
+                        <p><strong>1. Recojo de Hoteles (07:30 - 08:00 AM):</strong> Comenzamos a recoger a los participantes en nuestra van turística para dirigirnos a nuestro restaurante (1 hora y 30 minutos).</p>
+                        <p><strong>2. Desayuno Americano / Café:</strong> Ofrecemos la opción de un desayuno estilo americano o una taza de café caliente, y se proporciona el "Box Lunch" que llevaremos en la mochila.</p>
+                        <p><strong>3. Traslado a Japura:</strong> Viajamos durante 1 hora adicional hasta la base de cuatrimotos en Japura.</p>
+                        <p><strong>4. Práctica e Instrucciones:</strong> El guía instruye a los participantes y se reserva un tiempo suficiente para practicar y familiarizarse con la conducción.</p>
+                        <p><strong>5. Almuerzo Box Lunch:</strong> Disfrutaremos de nuestro almuerzo tipo "Box Lunch" antes del ascenso.</p>
+                        <p><strong>6. Ruta en Cuatrimoto:</strong> Manejamos durante aproximadamente una hora y media hasta la base del mirador.</p>
+                        <p><strong>7. Caminata a la Montaña de Colores:</strong> Caminata de 50 minutos hasta la cima. Tiempo libre para fotos con menor afluencia de personas en el sitio.</p>
+                        <p><strong>8. Descenso en Moto:</strong> Retornamos al estacionamiento y conducimos las cuatrimotos de vuelta a Japura.</p>
+                        <p><strong>9. Retorno a Cusco:</strong> Regreso a la ciudad de Cusco, arribando aproximadamente a las 20:00 horas.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TAB: PRECIOS -->
+            <div id="tab-precios" class="tab-content">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Tabla de Precios</h3>
+                    <div class="day-content">
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 15px; text-align: left; font-size: 0.95rem;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid var(--color-primary); font-weight: bold; color: var(--color-text-dark);">
+                                    <th style="padding: 10px;">Nacionalidad</th>
+                                    <th style="padding: 10px;">Adulto</th>
+                                    <th style="padding: 10px;">Niño</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 10px; font-weight: 600;">Extranjero</td>
+                                    <td style="padding: 10px; color: var(--color-primary); font-weight: 700;">$85.00 USD</td>
+                                    <td style="padding: 10px;">$82.00 USD</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; font-weight: 600;">Nacional (Peruano)</td>
+                                    <td style="padding: 10px; color: var(--color-primary); font-weight: 700;">$82.00 USD</td>
+                                    <td style="padding: 10px;">$79.00 USD</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <h4>Incluye:</h4>
+                        <ul>
+                            <li>Pickup en el hotel.</li>
+                            <li>Transporte turístico ida y vuelta (grupo reducido de max 8-10 pasajeros).</li>
+                            <li>Cuatrimoto, casco, guantes.</li>
+                            <li>Servicio de Guía profesional inglés, español.</li>
+                            <li>Desayuno y almuerzo buffet (primer turno).</li>
+                            <li>Mantas de abrigo en el transporte.</li>
+                            <li>Oxígeno y botiquín de primeros auxilios.</li>
+                            <li>Entrada a la montaña de colores.</li>
+                        </ul>
+                        <br>
+                        <h4>No Incluye:</h4>
+                        <ul>
+                            <li>Desayuno en el segundo turno (solo café/desayuno americano ligero).</li>
+                            <li>Bebidas adicionales y snacks extras.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: RECOMENDACIONES -->
+            <div id="tab-recomendaciones" class="tab-content">
+                <div class="itinerary-day">
+                    <h3 class="day-title">Recomendaciones de Seguridad</h3>
+                    <div class="day-content">
+                        <ul>
+                            <li>Lleva zapatos cerrados y resistentes para proteger tus pies.</li>
+                            <li>Usa ropa cómoda y que puedas ensuciar, ya que es probable que te ensucies con polvo o barro durante el recorrido.</li>
+                            <li>Conduce a una velocidad segura y mantén una distancia adecuada entre las cuatrimotos.</li>
+                            <li>Sigue siempre las instrucciones del guía y usa el equipo de protección proporcionado, como casco y gafas.</li>
+                            <li>Si no tienes experiencia en la conducción de cuatrimotos, considera tomar una breve lección antes de comenzar el tour para familiarizarte con el manejo.</li>
+                            <li>Los caminos pueden ser polvorientos o fangosos, así que prepárate para diferentes condiciones climáticas.</li>
+                            <li>Mantén un control constante de tu cuatrimoto, especialmente en terrenos irregulares a gran altitud.</li>
+                            <li>Respeta las áreas naturales y sitios arqueológicos que visites. No dejes basura y sigue las normas de conservación.</li>
+                            <li>La conducción de cuatrimotos puede ser físicamente exigente. Asegúrate de estar en buena forma física.</li>
+                            <li>Lleva agua embotellada contigo para mantenerte hidratado durante todo el recorrido.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Columna Derecha: Sidebar Fija -->
+        <aside class="tour-sidebar">
+            
+            <!-- Caja de Reserva Flotante -->
+            <div class="booking-box glass-box fade-up">
+                <div class="booking-header">
+                    <span class="price-big" style="font-size: 2.5rem;">$82</span>
+                    <span class="price-small">por peruano / desde</span>
+                </div>
+                
+                <form class="booking-form" id="bookingForm" action="javascript:void(0);">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="tu@correo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Comentario o dudas</label>
+                        <textarea id="comments" rows="3" placeholder="¿Cuántas personas viajan?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" onclick="sendToWhatsApp()">Reservar por WhatsApp 📱</button>
+                </form>
+            </div>
+
+            <!-- Caja: Por qué reservar -->
+            <div class="why-book-box fade-up delay-1">
+                <h3>¿Por qué reservar con nosotros?</h3>
+                <ul class="why-book-list">
+                    <li><span class="icon">⭐</span> Calidad de servicio</li>
+                    <li><span class="icon">🗺️</span> Viajes a medida</li>
+                    <li><span class="icon">🗣️</span> Comunicación internacional</li>
+                    <li><span class="icon">⛰️</span> Espíritu aventurero</li>
+                    <li><span class="icon">🤝</span> Respeto a la comunidad</li>
+                    <li><span class="icon">👨‍🦯</span> Guías profesionales</li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- Global Footer Premium -->
+    <footer class="global-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Musoq Peru Expedition" class="footer-logo" style="background: white; padding: 10px; border-radius: 10px; height: 75px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                    <p style="margin-top: 15px; font-size: 0.95rem; line-height: 1.6; color: #ccc;">Experiencias auténticas, aventuras exclusivas y turismo sostenible en Cusco y todo el Perú. Descubre el mundo en compañía de expertos locales apasionados.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#" target="_blank" title="Facebook">📘</a>
+                        <a href="#" target="_blank" title="Instagram">📸</a>
+                        <a href="#" target="_blank" title="TikTok">🎵</a>
+                        <a href="#" target="_blank" title="YouTube">📺</a>
+                        <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" title="WhatsApp">📱</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Tours Destacados</h4>
+                    <ul>
+                        <li><a href="tour-machu-picchu-full-day.html">Machu Picchu Full Day</a></li>
+                        <li><a href="tour-valle-sagrado-vip.html">Valle Sagrado VIP</a></li>
+                        <li><a href="tour-montana-7-colores.html">Montaña 7 Colores</a></li>
+                        <li><a href="tour-laguna-humantay.html">Laguna Humantay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p style="color: #ccc; margin-bottom: 10px;">📍 Portal de Panes, Plaza de Armas, Cusco - Perú</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">📱 +51 902 363 640</p>
+                    <p style="color: #ccc; margin-bottom: 10px;">✉️ reservas@musoqperuexpedition.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Musoq Peru Expedition. Todos los derechos reservados. | Cusco - Perú.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const comments = document.getElementById('comments').value;
+            
+            if(!name || !email) {
+                alert("Por favor completa tu nombre y correo.");
+                return;
+            }
+
+            const phone = "51902363640";
+            const text = `Hola MUSOQ PERU EXPEDITION! Me gustaría reservar el tour: Tour Montaña 7 Colores en Cuatrimoto.%0A%0A*Mis Datos de Reserva:*%0A- Nombre: ${name}%0A- Correo: ${email}%0A- Comentarios/Dudas: ${comments}`;
+            
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        }
+
+        function openTab(tabName, btn) {
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove("active");
+            }
+            var btns = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("active");
+            }
+            document.getElementById("tab-" + tabName).classList.add("active");
+            btn.classList.add("active");
+        }
+    </script>
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/51902363640?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20tours%20de%20MUSOQ%20PERU%20EXPEDITION." target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+</body>
+</html>
