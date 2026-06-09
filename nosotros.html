@@ -8,28 +8,55 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .page-header {
-            height: 500px;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/nosotros_banner.png') center/cover;
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('images/nosotros_banner.png') center center/contain no-repeat #0a0a0a;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            margin-bottom: 50px;
-            animation: bgZoom 15s infinite alternate linear;
+            margin-bottom: 0;
+            position: relative;
         }
-        @keyframes bgZoom {
-            from { background-size: 100%; }
-            to { background-size: 110%; }
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 26px;
+            height: 40px;
+            border: 2px solid white;
+            border-radius: 12px;
+            opacity: 0.7;
+        }
+        .page-header::before {
+            content: '';
+            position: absolute;
+            bottom: 53px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: white;
+            border-radius: 50%;
+            animation: scrollDot 2s infinite ease-in-out;
+        }
+        @keyframes scrollDot {
+            0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+            50% { transform: translateX(-50%) translateY(8px); opacity: 0; }
+            100% { transform: translateX(-50%) translateY(0); opacity: 1; }
         }
         .page-title {
             font-size: 3.5rem;
             text-transform: uppercase;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
+            width: 100%;
         }
         .info-box {
             background: var(--glass-bg-light);
@@ -53,27 +80,14 @@
             font-size: 1.1rem;
             color: #555;
             line-height: 1.8;
-            font-style: italic;
             margin-bottom: 20px;
-        }
-        .check-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-        .check-list li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1rem;
-            color: #444;
         }
         .quality-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             margin-top: 40px;
+            width: 100%;
         }
         .quality-card {
             background: white;
@@ -91,8 +105,9 @@
             font-size: 2.5rem;
             margin-bottom: 15px;
         }
-        @media (max-width: 768px) {
-            .check-list { grid-template-columns: 1fr; }
+        @media (max-width: 900px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .page-title { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -147,73 +162,106 @@
         </div>
     </div>
 
-    <!-- Page Header -->
+    <!-- Page Header (Primera Hoja) -->
     <div class="page-header fade-up">
         <h1 class="page-title">Nosotros / Experiencias</h1>
     </div>
 
-    <!-- Content -->
-    <main class="container">
-        <div class="about-grid" style="margin-top:0;">
+    <!-- Misión y Visión (Segunda Hoja) -->
+    <section style="min-height: 100vh; display: flex; align-items: center; padding: 100px 0; background-color: #ffffff;">
+        <div class="container">
+            <div class="about-grid">
+                
+                <!-- Misión -->
+                <div class="info-box fade-up">
+                    <h3 style="color: var(--color-primary); font-size: 2rem; border-bottom: 2px solid var(--color-primary); padding-bottom: 10px; margin-bottom: 20px;"><span>🌟</span> MISIÓN</h3>
+                    <p style="font-size: 1.05rem; color: #333; line-height: 1.8; text-align: justify; margin-bottom: 0;">En MUSOQ PERU EXPEDITION, brindamos servicios turísticos de alta calidad en la ciudad del Cusco y sus principales destinos, diseñando experiencias únicas y memorables para viajeros nacionales e internacionales. Nos comprometemos a ofrecer atención personalizada, excelencia en el servicio, responsabilidad social y respeto por el patrimonio cultural y natural del Perú, promoviendo un turismo sostenible que genere valor para nuestros clientes, colaboradores y comunidades.</p>
+                </div>
+
+                <!-- Visión -->
+                <div class="info-box vision fade-up delay-1">
+                    <h3 style="color: var(--color-secondary); font-size: 2rem; border-bottom: 2px solid var(--color-secondary); padding-bottom: 10px; margin-bottom: 20px;"><span>🚀</span> VISIÓN</h3>
+                    <p style="font-size: 1.05rem; color: #333; line-height: 1.8; text-align: justify; margin-bottom: 0;">Ser la agencia de viajes líder en Cusco y el Perú, reconocida a nivel nacional e internacional por ofrecer experiencias turísticas auténticas, seguras y sostenibles, conectando a nuestros visitantes con la riqueza cultural, histórica y natural de los Andes, mientras contribuimos al desarrollo de las comunidades locales.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Valores, Eslogan y Calidad (Tercera Hoja) -->
+    <section style="min-height: 100vh; padding: 100px 0; background-color: var(--color-bg-light); display: flex; align-items: center;">
+        <div class="container" style="width: 100%;">
             
-            <!-- Misión -->
-            <div class="info-box fade-up">
-                <h3><span>🌟</span> MISIÓN</h3>
-                <p>“Nuestra misión es brindar experiencias de viaje excepcionales creando recuerdos inolvidables en Cusco y todo el Perú.”</p>
-                <ul class="check-list">
-                    <li>✔ Servicio personalizado</li>
-                    <li>✔ Atención premium</li>
-                    <li>✔ Viajes cómodos y seguros</li>
-                    <li>✔ Experiencias auténticas</li>
-                    <li>✔ Asesoría profesional</li>
-                </ul>
+            <!-- Valores Corporativos -->
+            <div class="fade-up">
+                <h2 style="text-align:center; color:var(--color-text-dark); font-size: 2.2rem; text-transform: uppercase;">💎 Valores Corporativos</h2>
+                <div style="width: 80px; height: 4px; background-color: var(--color-primary); margin: 10px auto 40px auto; border-radius: 2px;"></div>
+                
+                <div class="quality-cards">
+                    <div class="quality-card" style="text-align: left; border-top: 4px solid var(--color-primary); border-radius: 8px;">
+                        <h4 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">🤝 Compromiso</h4>
+                        <p style="font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 0;">Cumplimos con responsabilidad cada servicio ofrecido.</p>
+                    </div>
+                    <div class="quality-card" style="text-align: left; border-top: 4px solid var(--color-primary); border-radius: 8px;">
+                        <h4 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">⭐ Calidad</h4>
+                        <p style="font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 0;">Buscamos la excelencia en cada experiencia turística.</p>
+                    </div>
+                    <div class="quality-card" style="text-align: left; border-top: 4px solid var(--color-primary); border-radius: 8px;">
+                        <h4 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">🌿 Respeto</h4>
+                        <p style="font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 0;">Valoramos la diversidad cultural y el medio ambiente.</p>
+                    </div>
+                    <div class="quality-card" style="text-align: left; border-top: 4px solid var(--color-primary); border-radius: 8px;">
+                        <h4 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">🔒 Integridad</h4>
+                        <p style="font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 0;">Actuamos con honestidad y transparencia.</p>
+                    </div>
+                    <div class="quality-card" style="text-align: left; border-top: 4px solid var(--color-primary); border-radius: 8px;">
+                        <h4 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">💡 Innovación</h4>
+                        <p style="font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 0;">Mejoramos continuamente nuestros servicios.</p>
+                    </div>
+                    <div class="quality-card" style="text-align: left; border-top: 4px solid var(--color-primary); border-radius: 8px;">
+                        <h4 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">❤️ Pasión por el turismo</h4>
+                        <p style="font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 0;">Compartimos con orgullo la riqueza del Perú.</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Visión -->
-            <div class="info-box vision fade-up delay-1">
-                <h3><span>🚀</span> VISIÓN</h3>
-                <p>“Ser una agencia líder en Perú reconocida por la excelencia, innovación y compromiso con el turismo sostenible.”</p>
-                <ul class="check-list">
-                    <li>✔ Tecnología moderna</li>
-                    <li>✔ Turismo sostenible</li>
-                    <li>✔ Innovación constante</li>
-                    <li>✔ Experiencias memorables</li>
-                    <li>✔ Compromiso ambiental</li>
-                </ul>
+            <!-- Eslogan -->
+            <div class="fade-up" style="margin-top: 80px; width: 100%; text-align: center; background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('images/nosotros_banner.png') center/cover; padding: 60px 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); color: white;">
+                <p style="font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; color: var(--color-secondary); margin-bottom: 10px; font-family: var(--font-heading);">NUESTRO ESLOGAN</p>
+                <h2 style="font-size: 1.8rem; font-style: italic; font-weight: 300; font-family: 'Montserrat', sans-serif; line-height: 1.4; color: white;">"Descubre la esencia del Perú, vive la aventura con MUSOQ PERU EXPEDITION."</h2>
+            </div>
+
+            <!-- Calidad de Servicio -->
+            <div class="fade-up" style="margin-top: 80px;">
+                <h2 style="text-align:center; color:var(--color-text-dark); font-size: 2.2rem; text-transform: uppercase;">⭐ Calidad de Servicio</h2>
+                <div style="width: 80px; height: 4px; background-color: var(--color-primary); margin: 10px auto 40px auto; border-radius: 2px;"></div>
+                
+                <div class="quality-cards">
+                    <div class="quality-card" style="border-radius: 8px;">
+                        <div class="icon">📱</div>
+                        <h4>Atención rápida</h4>
+                        <span style="color:#777; font-size:0.9rem;">Soporte inmediato por WhatsApp.</span>
+                    </div>
+                    <div class="quality-card" style="border-radius: 8px;">
+                        <div class="icon">🤝</div>
+                        <h4>Asesoría personalizada</h4>
+                        <span style="color:#777; font-size:0.9rem;">Te guiamos paso a paso en tu viaje.</span>
+                    </div>
+                    <div class="quality-card" style="border-radius: 8px;">
+                        <div class="icon">👥</div>
+                        <h4>Equipo profesional</h4>
+                        <span style="color:#777; font-size:0.9rem;">Guías expertos y locales.</span>
+                    </div>
+                    <div class="quality-card" style="border-radius: 8px;">
+                        <div class="icon">🛡️</div>
+                        <h4>Seguridad total</h4>
+                        <span style="color:#777; font-size:0.9rem;">Viajes seguros y garantizados.</span>
+                    </div>
+                </div>
             </div>
             
         </div>
-        
-        <!-- Calidad de Servicio -->
-        <div class="fade-up delay-2" style="margin-top:60px;">
-            <h2 style="text-align:center; color:var(--color-text-dark);">⭐ CALIDAD DE SERVICIO</h2>
-            <div style="width: 60px; height: 3px; background-color: var(--color-primary); margin: 10px auto 40px auto; border-radius: 2px;"></div>
-            
-            <div class="quality-cards">
-                <div class="quality-card">
-                    <div class="icon">📱</div>
-                    <h4>Atención rápida</h4>
-                    <span style="color:#777; font-size:0.9rem;">Soporte inmediato por WhatsApp.</span>
-                </div>
-                <div class="quality-card">
-                    <div class="icon">🤝</div>
-                    <h4>Asesoría personalizada</h4>
-                    <span style="color:#777; font-size:0.9rem;">Te guiamos paso a paso en tu viaje.</span>
-                </div>
-                <div class="quality-card">
-                    <div class="icon">👥</div>
-                    <h4>Equipo profesional</h4>
-                    <span style="color:#777; font-size:0.9rem;">Guías expertos y locales.</span>
-                </div>
-                <div class="quality-card">
-                    <div class="icon">🛡️</div>
-                    <h4>Seguridad total</h4>
-                    <span style="color:#777; font-size:0.9rem;">Viajes seguros y garantizados.</span>
-                </div>
-            </div>
-        </div>
-        <br><br><br>
-    </main>
+    </section>
 
     <!-- Global Footer Premium -->
     <footer class="global-footer">
