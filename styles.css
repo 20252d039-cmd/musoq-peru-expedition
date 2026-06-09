@@ -187,21 +187,21 @@ img {
 
 .logo-box {
     background: white !important;
-    width: 125px !important;
-    height: 125px !important;
+    width: 70px !important;
+    height: 70px !important;
     border-radius: 50% !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
-    padding: 15px !important;
+    padding: 5px !important;
     overflow: hidden !important;
-    transform: translateY(25px) !important;
+    transform: translateY(0) !important;
     transition: transform var(--transition-fast) !important;
-    border: 3px solid var(--color-primary) !important;
+    border: 2px solid var(--color-primary) !important;
 }
 .logo-box:hover {
-    transform: translateY(25px) scale(1.05) !important;
+    transform: scale(1.05) !important;
 }
 .logo-box a.logo {
     display: flex !important;

@@ -50,7 +50,15 @@
         .page-title {
             font-size: 3.5rem;
             text-transform: uppercase;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            color: white;
+            -webkit-text-stroke: 1.5px var(--color-secondary); /* Borde verde limón alrededor de cada letra */
+            text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            padding: 12px 30px;
+            border: 3px solid var(--color-secondary); /* Borde verde limón de caja */
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.45); /* Fondo oscuro para contraste */
+            backdrop-filter: blur(5px);
+            display: inline-block;
         }
         .about-grid {
             display: grid;
