@@ -187,21 +187,21 @@ img {
 
 .logo-box {
     background: white !important;
-    width: 110px !important;
-    height: 110px !important;
+    width: 125px !important;
+    height: 125px !important;
     border-radius: 50% !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
-    padding: 6px !important;
+    padding: 15px !important;
     overflow: hidden !important;
-    transform: translateY(22px) !important;
+    transform: translateY(25px) !important;
     transition: transform var(--transition-fast) !important;
     border: 3px solid var(--color-primary) !important;
 }
 .logo-box:hover {
-    transform: translateY(22px) scale(1.05) !important;
+    transform: translateY(25px) scale(1.05) !important;
 }
 .logo-box a.logo {
     display: flex !important;
@@ -779,8 +779,15 @@ img {
 }
 
 .footer-logo {
-    max-width: 200px;
-    margin-bottom: 20px;
+    height: 220px !important;
+    max-width: 320px !important;
+    width: auto !important;
+    background: white !important;
+    padding: 15px !important;
+    border-radius: 15px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+    object-fit: contain !important;
+    margin-bottom: 20px !important;
 }
 .footer-brand p {
     color: #bbb;
