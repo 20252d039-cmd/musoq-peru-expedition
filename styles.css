@@ -10,7 +10,7 @@
     --color-secondary-dark: #2B8000; /* Verde Limón Oscuro */
     
     /* Colores Neutrales y de Fondo */
-    --color-bg-dark: #111111; /* Negro Elegante */
+    --color-bg-dark: #3a3f44; /* Plomo / Gris Plomo */
     --color-bg-light: #F5F5F5; /* Gris Claro */
     --color-text-dark: #111111;
     --color-text-light: #FFFFFF;
@@ -187,21 +187,21 @@ img {
 
 .logo-box {
     background: white !important;
-    width: 85px !important;
-    height: 85px !important;
+    width: 110px !important;
+    height: 110px !important;
     border-radius: 50% !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
-    padding: 8px !important;
+    padding: 6px !important;
     overflow: hidden !important;
-    transform: translateY(12px) !important;
+    transform: translateY(22px) !important;
     transition: transform var(--transition-fast) !important;
-    border: 2px solid var(--color-primary) !important;
+    border: 3px solid var(--color-primary) !important;
 }
 .logo-box:hover {
-    transform: translateY(12px) scale(1.05) !important;
+    transform: translateY(22px) scale(1.05) !important;
 }
 .logo-box a.logo {
     display: flex !important;
@@ -340,7 +340,7 @@ img {
     right: -100%;
     width: 280px;
     height: 100vh;
-    background: rgba(10, 10, 10, 0.98);
+    background: rgba(58, 63, 68, 0.98); /* Plomo / Gris Plomo */
     backdrop-filter: blur(15px);
     z-index: 999;
     transition: var(--transition-fast);
